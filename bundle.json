@@ -1,0 +1,54 @@
+{
+    "name": "@ohos/telephony_cangjie_api",
+    "version": "6.0",
+    "description": "telephony call manager service",
+    "publishAs": "code-segment",
+    "homePage": "https://gitee.com/openharmony",
+    "repository": "https://gitee.com/openharmony/telephony_cangjie_api",
+    "license": "Apache License 2.0",
+    "language": "",
+    "private": false,
+    "scripts": {},
+    "envs": [],
+    "dirs": [],
+    "author": {},
+    "contributors": [],
+    "segment": {
+        "destPath": "base/telephony/telephony_cangjie_api"
+    },
+    "component": {
+        "name": "telephony_cangjie_api",
+        "subsystem": "telephony",
+        "syscap": [
+            "SystemCapability.Telephony.CallManager",
+            "SystemCapability.Applications.Contacts"
+        ],
+        "features": [
+        ],
+        "adapted_system_type": [
+            "standard"
+        ],
+        "rom": "1639KB",
+        "ram": "6MB",
+        "deps": {
+            "components": [
+                "cangjie_api",
+                "hiviewdfx_cangjie_api",
+                "ability_cangjie_api",
+                "arkui_cangjie_api",
+                "call_manager"
+            ]
+        },
+        "build": {
+            "sub_component": [
+              "//base/telephony/telephony_cangjie_api/ohos/telephony:ohos.telephony",
+              "//base/telephony/telephony_cangjie_api/ohos/telephony/call:ohos.telephony_call",
+              "//base/telephony/telephony_cangjie_api/kit/TelephonyKit:kit.TelephonyKit"
+            ],
+            "inner_kits": [
+            ],
+            "test": [
+            ]
+        }
+    }
+}
