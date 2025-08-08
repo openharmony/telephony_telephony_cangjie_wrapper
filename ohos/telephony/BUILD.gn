@@ -17,6 +17,6 @@ ohos_cj_library("ohos.telephony") {
   sources = [ "telephony.cj" ]
 
   subsystem_name = "telephony"
-  part_name = "telephony_cangjie_api"
+  part_name = "telephony_cangjie_wrapper"
   lib_name = "telephony"
 }

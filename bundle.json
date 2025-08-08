@@ -1,10 +1,10 @@
 {
-    "name": "@ohos/telephony_cangjie_api",
+    "name": "@ohos/telephony_cangjie_wrapper",
     "version": "6.0",
     "description": "telephony call manager service",
     "publishAs": "code-segment",
     "homePage": "https://gitee.com/openharmony",
-    "repository": "https://gitee.com/openharmony/telephony_cangjie_api",
+    "repository": "https://gitee.com/openharmony/telephony_cangjie_wrapper",
     "license": "Apache License 2.0",
     "language": "",
     "private": false,
@@ -14,10 +14,10 @@
     "author": {},
     "contributors": [],
     "segment": {
-        "destPath": "base/telephony/telephony_cangjie_api"
+        "destPath": "base/telephony/telephony_cangjie_wrapper"
     },
     "component": {
-        "name": "telephony_cangjie_api",
+        "name": "telephony_cangjie_wrapper",
         "subsystem": "telephony",
         "syscap": [
             "SystemCapability.Telephony.CallManager",
@@ -32,18 +32,18 @@
         "ram": "6MB",
         "deps": {
             "components": [
-                "cangjie_api",
-                "hiviewdfx_cangjie_api",
-                "ability_cangjie_api",
-                "arkui_cangjie_api",
+                "cangjie_ark_interop",
+                "hiviewdfx_cangjie_wrapper",
+                "ability_cangjie_wrapper",
+                "arkui_cangjie_wrapper",
                 "call_manager"
             ]
         },
         "build": {
             "sub_component": [
-              "//base/telephony/telephony_cangjie_api/ohos/telephony:ohos.telephony",
-              "//base/telephony/telephony_cangjie_api/ohos/telephony/call:ohos.telephony_call",
-              "//base/telephony/telephony_cangjie_api/kit/TelephonyKit:kit.TelephonyKit"
+              "//base/telephony/telephony_cangjie_wrapper/ohos/telephony:ohos.telephony",
+              "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony_call",
+              "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit"
             ],
             "inner_kits": [
             ],

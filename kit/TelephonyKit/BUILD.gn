@@ -23,6 +23,6 @@ ohos_cj_library("kit.TelephonyKit") {
 
   kit = true
   subsystem_name = "telephony"
-  part_name = "telephony_cangjie_api"
+  part_name = "telephony_cangjie_wrapper"
   lib_name = "TelephonyKit"
 }

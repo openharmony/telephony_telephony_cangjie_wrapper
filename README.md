@@ -22,7 +22,7 @@ The Telephony subsystem consists of the following modules:
 ## Directory Structure<a name="section119mcpsimp"></a>
 
 ```
-base/telephony/telephony_cangjie_api
+base/telephony/telephony_cangjie_wrapper
 ├── ohos             # Cangjie Telephony code
 ├── kit              # Cangjie kit code
 ├── figures          # architecture pictures
@@ -37,4 +37,4 @@ base/telephony/telephony_cangjie_api
 
 **Telephony**
 
-telephony_cangjie_api
+telephony_cangjie_wrapper

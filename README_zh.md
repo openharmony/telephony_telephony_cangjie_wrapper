@@ -22,7 +22,7 @@
 ## 目录<a name="section119mcpsimp"></a>
 
 ```
-base/telephony/telephony_cangjie_api
+base/telephony/telephony_cangjie_wrapper
 ├── ohos             # 仓颉电话服务子系统接口实现
 ├── kit              # 仓颉kit化代码
 ├── figures          # 存放readme中的架构图
@@ -37,4 +37,4 @@ base/telephony/telephony_cangjie_api
 
 **电话服务子系统**
 
-telephony_cangjie_api
+telephony_cangjie_wrapper

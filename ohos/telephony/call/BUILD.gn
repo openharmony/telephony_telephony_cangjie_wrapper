@@ -21,17 +21,17 @@ ohos_cj_library("ohos.telephony_call") {
   ]
 
   cj_external_deps = [
-    "ability_cangjie_api:ohos.ability",
-    "arkui_cangjie_api:ohos.base",
-    "cangjie_api:ohos.ffi",
-    "hiviewdfx_cangjie_api:ohos.hilog",
-    "cangjie_api:ohos.encoding.json",
-    "cangjie_api:ohos.labels",
+    "ability_cangjie_wrapper:ohos.ability",
+    "arkui_cangjie_wrapper:ohos.base",
+    "cangjie_ark_interop:ohos.ffi",
+    "hiviewdfx_cangjie_wrapper:ohos.hilog",
+    "cangjie_ark_interop:ohos.encoding.json",
+    "cangjie_ark_interop:ohos.labels",
   ]
 
   external_deps = [ "call_manager:cj_telephony_call_ffi" ]
 
   subsystem_name = "telephony"
-  part_name = "telephony_cangjie_api"
+  part_name = "telephony_cangjie_wrapper"
   lib_name = "ohos.telephony_call"
 }
