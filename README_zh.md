@@ -1,8 +1,8 @@
-# 电话服务子系统<a name="ZH-CN_TOPIC_0000001162422291"></a>
+# 电话服务仓颉<a name="ZH-CN_TOPIC_0000001162422291"></a>
 
 ## 简介<a name="section104mcpsimp"></a>
 
-电话服务子系统，提供了一系列的API用于获取无线蜂窝网络和SIM卡相关的一些信息。应用可以通过调用API来获取当前注册网络名称、网络服务状态、信号强度以及SIM卡的相关信息。
+电话服务仓颉，提供了一系列的API用于获取无线蜂窝网络和SIM卡相关的一些信息。应用可以通过调用API来获取当前注册网络名称、网络服务状态、信号强度以及SIM卡的相关信息。
 
 各个模块主要作用如下：
 
@@ -11,19 +11,19 @@
 -   蜂窝通话模块：主要功能是实现基于运营商网络的基础通话。
 -   蜂窝数据模块：主要功能是实现基于运营商网络的蜂窝数据上网。
 -   短彩信模块：主要功能是短信收发和彩信编解码。
--   状态订阅模块：主要功能是提供电话服务子系统各种消息事件的订阅以及取消订阅的API。
+-   状态订阅模块：主要功能是提供电话服务仓颉各种消息事件的订阅以及取消订阅的API。
 -   数据存储模块：主要功能是持久化数据存储，提供DataAbility访问接口。
 -   RIL Adapter模块： 主要功能是与modem通信接口的适配。
 
 **图 1**   子系统架构图
 
-![](figures/zh-cn_architecture-of-telephony-subsystem.png)
+![](figures/telephony_cangjie_wrapper_architecture.png)
 
 ## 目录<a name="section119mcpsimp"></a>
 
 ```
 base/telephony/telephony_cangjie_wrapper
-├── ohos             # 仓颉电话服务子系统接口实现
+├── ohos             # 仓颉电话服务接口实现
 ├── kit              # 仓颉kit化代码
 ├── figures          # 存放readme中的架构图
 ```
@@ -35,6 +35,6 @@ base/telephony/telephony_cangjie_wrapper
 
 ## 相关仓<a name="section152mcpsimp"></a>
 
-**电话服务子系统**
+**电话服务仓颉**
 
 telephony_cangjie_wrapper
