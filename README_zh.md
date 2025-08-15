@@ -1,8 +1,8 @@
-# 电话服务仓颉<a name="ZH-CN_TOPIC_0000001162422291"></a>
+# 电话服务仓颉接口<a name="ZH-CN_TOPIC_0000001162422291"></a>
 
 ## 简介<a name="section104mcpsimp"></a>
 
-电话服务仓颉，提供了一系列的API用于获取无线蜂窝网络和SIM卡相关的一些信息。应用可以通过调用API来获取当前注册网络名称、网络服务状态、信号强度以及SIM卡的相关信息。
+电话服务仓颉接口是在 OpenHarmony 上基于电话服务子系统能力之上封装的仓颉API。电话服务子系统，提供了一系列的API用于获取无线蜂窝网络和SIM卡相关的一些信息。应用可以通过调用API来获取当前注册网络名称、网络服务状态、信号强度以及SIM卡的相关信息。
 
 各个模块主要作用如下：
 
@@ -37,4 +37,4 @@ base/telephony/telephony_cangjie_wrapper
 
 **电话服务仓颉**
 
-telephony_cangjie_wrapper
+[call_manager](https://gitee.com/openharmony/telephony_call_manager/blob/master/README_zh.md)
