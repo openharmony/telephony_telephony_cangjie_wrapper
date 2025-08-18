@@ -1,8 +1,8 @@
-# Telephony <a name="EN-US_TOPIC_0000001162422291"></a>
+# telephony_cangjie_wrapper <a name="EN-US_TOPIC_0000001162422291"></a>
 
 ## Introduction<a name="section104mcpsimp"></a>
 
-The Telephony subsystem provides APIs for obtaining information about the wireless cellular network and SIM card. Applications can call these APIs to obtain information such as the name of the currently registered network, network service status, signal strength, and SIM card information.
+The telephony_cangjie_wrapper is a Cangjie API encapsulated on OpenHarmony based on the capabilities of the Telephony subsystem. The Telephony subsystem provides APIs for obtaining information about the wireless cellular network and SIM card. Applications can call these APIs to obtain information such as the name of the currently registered network, network service status, signal strength, and SIM card information.
 
 The Telephony subsystem consists of the following modules:
 
@@ -15,9 +15,9 @@ The Telephony subsystem consists of the following modules:
 -   Data storage module: stores persistent data and provides **DataAbility** access APIs.
 -   RIL Adapter module: implements adaptation of the modem communication interfaces.
 
-**Figure 1** Architecture of the network management subsystem
+**Figure 1** Architecture of the telephony_cangjie_wrapper
 
-![](figures/en-us_architecture-of-telephony-subsystem.png)
+![](figures/telephony_cangjie_wrapper_architecture_en.png)
 
 ## Directory Structure<a name="section119mcpsimp"></a>
 
@@ -35,6 +35,4 @@ base/telephony/telephony_cangjie_wrapper
 
 ## Repositories Involved<a name="section152mcpsimp"></a>
 
-**Telephony**
-
-telephony_cangjie_wrapper
+[call_manager](https://gitee.com/openharmony/telephony_call_manager/blob/master/README.md)

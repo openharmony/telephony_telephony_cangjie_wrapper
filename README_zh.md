@@ -35,6 +35,4 @@ base/telephony/telephony_cangjie_wrapper
 
 ## 相关仓<a name="section152mcpsimp"></a>
 
-**电话服务仓颉**
-
 [call_manager](https://gitee.com/openharmony/telephony_call_manager/blob/master/README_zh.md)
