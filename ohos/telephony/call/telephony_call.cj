@@ -13,28 +13,45 @@
  * limitations under the License.
  */
 
-package ohos.telephony_call
+package ohos.telephony.call
 
-import ohos.base.*
-import ohos.ability.*
-import std.collection.*
+import ohos.app.ability.ui_ability.*
+import ohos.app.ability.want.*
 import ohos.encoding.json.*
 import ohos.ffi.*
-import std.collection.*
 import ohos.labels.*
+import ohos.business_exception.BusinessException
 
+import std.collection.*
+
+/**
+ * Provides methods related to call management.
+ *
+ * @relation declare namespace call
+ */
 @!APILevel[
     21,
     stagemodelonly: true,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
-public class TelephonyCall {
+public class Call {
+    init() {}
+
     static init() {
         unsafe {
             FfiOHOSTelephonyCallInit()
         }
     }
 
+    /**
+     * Formats a phone number into an E.164 representation.
+     *
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     * @relation function formatPhoneNumberToE164(phoneNumber: string, countryCode: string): Promise<string>
+     */
     @!APILevel[
         21,
         stagemodelonly: true,
@@ -62,11 +79,19 @@ public class TelephonyCall {
         }
     }
 
+    /**
+     * Go to the dial screen and the called number is displayed.
+     *
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     * @relation function makeCall(phoneNumber: string): Promise<void>
+     */
     @!APILevel[
         21,
-        atomicservice: true,
         stagemodelonly: true,
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(phoneNumber: String): Unit {
         unsafe {
@@ -81,36 +106,49 @@ public class TelephonyCall {
         }
     }
 
+    /**
+     * Go to the dial screen and the called number is displayed.
+     *
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     * @relation function makeCall(context: Context, phoneNumber: string): Promise<void>
+     */
     @!APILevel[
         21,
-        atomicservice: true,
         stagemodelonly: true,
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(context: UIAbilityContext, phoneNumber: String): Unit {
-        let parametersMap = HashMap<String, JsonValue>()
-        parametersMap.add("phoneNumber", JsonString(phoneNumber))
-        parametersMap.add("pageFlag", JsonString("page_flag_edit_before_calling"))
+        let parametersMap = HashMap<String, WantValueType>()
+        parametersMap.add("phoneNumber", StringValue(phoneNumber))
+        parametersMap.add("pageFlag", StringValue("page_flag_edit_before_calling"))
         context.startAbility(
             Want(bundleName: "com.ohos.contacts", abilityName: "com.ohos.contacts.MainAbility",
-                parameters: JsonObject(parametersMap).toString()))
+                parameters: parametersMap))
     }
 
     /**
-     * @brief  isEmergencyPhoneNumber(phoneNumber: string, options: EmergencyNumberOptions,
-     *  callback: AsyncCallback<boolean>): void
+     * Checks whether a phone number is on the emergency number list.
+     *
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     * @relation function isEmergencyPhoneNumber(phoneNumber: string, options?: EmergencyNumberOptions): Promise<boolean>
      */
     @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    public static func isEmergencyPhoneNumber(phoneNumber: String, options: EmergencyNumberOptions): Bool {
+    public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
         unsafe {
             var result = true
             try (cNumber = LibC.mallocCString(phoneNumber).asResource()) {
                 var errCode = 0i32
-                result = FfiOHOSTelephonyCallIsEmergencyPhoneNumber(cNumber.value, options.getValue(), inout errCode)
+                result = FfiOHOSTelephonyCallIsEmergencyPhoneNumber(cNumber.value, options.slotId, inout errCode)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call isEmergencyPhoneNumber failed: ${getErrorMsg(errCode)}")
                     throw BusinessException(getErrorCode(errCode),
@@ -122,19 +160,9 @@ public class TelephonyCall {
     }
 
     /**
-     * @brief  isEmergencyPhoneNumber(phoneNumber: string, callback: AsyncCallback<boolean>): void
-     */
-    @!APILevel[
-        21,
-        stagemodelonly: true,
-        syscap: "SystemCapability.Telephony.CallManager"
-    ]
-    public static func isEmergencyPhoneNumber(phoneNumber: String): Bool {
-        return isEmergencyPhoneNumber(phoneNumber, EmergencyNumberOptions.SLOT_ID_ONE)
-    }
-
-    /**
-     * @brief  hasCallSync(): boolean
+     * Checks whether a call is ongoing.
+     *
+     * @relation function hasCallSync(): boolean
      */
     @!APILevel[
         21,
@@ -146,7 +174,9 @@ public class TelephonyCall {
     }
 
     /**
-     * @brief  getCallStateSync(): CallState
+     * Obtains the call state.
+     *
+     * @relation function getCallStateSync(): CallState
      */
     @!APILevel[
         21,
@@ -159,7 +189,9 @@ public class TelephonyCall {
     }
 
     /**
-     * @brief  hasVoiceCapability(): boolean
+     * Checks whether a device supports voice calls.
+     *
+     * @relation function hasVoiceCapability(): boolean
      */
     @!APILevel[
         21,
@@ -173,10 +205,16 @@ public class TelephonyCall {
     }
 
     /**
-     * @brief  formatPhoneNumber(phoneNumber: string, callback: AsyncCallback<string>): void
-     * @brief  formatPhoneNumber(phoneNumber: string, options: NumberFormatOptions,
-     *  callback: AsyncCallback<string>): void
-     * @brief  formatPhoneNumber(phoneNumber: string, options?: NumberFormatOptions): Promise<string>
+     * Formats a phone number according to the Chinese Telephone Code Plan. Before the formatting,
+     * a phone number is in the format of country code (if any) + 3-digit service provider code
+     * + 4-digit area code + 4-digit subscriber number. After the formatting,
+     * each part is separated by a space.
+     *
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     * @relation function formatPhoneNumber(phoneNumber: string, options?: NumberFormatOptions): Promise<string>
      */
     @!APILevel[
         21,
@@ -185,7 +223,7 @@ public class TelephonyCall {
     ]
     public static func formatPhoneNumber(
         phoneNumber: String,
-        options!: NumberFormatOptions = NumberFormatOptions("CN")
+        options!: NumberFormatOptions = NumberFormatOptions()
     ): String {
         unsafe {
             var result = ""

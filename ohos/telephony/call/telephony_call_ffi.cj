@@ -13,10 +13,7 @@
  * limitations under the License.
  */
 
-package ohos.telephony_call
-
-import ohos.ffi.*
-import ohos.base.*
+package ohos.telephony.call
 
 foreign {
     func FfiOHOSTelephonyCallFormatPhoneNumberToE164(phoneNumber: CString, countryCode: CString,

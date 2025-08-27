@@ -13,7 +13,7 @@
 
 import("//build/cangjie/cjc.gni")
 
-ohos_cj_library("ohos.telephony_call") {
+ohos_cangjie_shared_library("ohos.telephony.call") {
   sources = [
     "number_format_options.cj",
     "telephony_call.cj",
@@ -21,8 +21,9 @@ ohos_cj_library("ohos.telephony_call") {
   ]
 
   cj_external_deps = [
-    "ability_cangjie_wrapper:ohos.ability",
-    "arkui_cangjie_wrapper:ohos.base",
+    "ability_cangjie_wrapper:ohos.app.ability.ui_ability",
+    "ability_cangjie_wrapper:ohos.app.ability.want",
+    "cangjie_ark_interop:ohos.business_exception",
     "cangjie_ark_interop:ohos.ffi",
     "hiviewdfx_cangjie_wrapper:ohos.hilog",
     "cangjie_ark_interop:ohos.encoding.json",
@@ -33,5 +34,4 @@ ohos_cj_library("ohos.telephony_call") {
 
   subsystem_name = "telephony"
   part_name = "telephony_cangjie_wrapper"
-  lib_name = "ohos.telephony_call"
 }
