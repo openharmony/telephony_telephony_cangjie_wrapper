@@ -13,10 +13,9 @@
 
 import("//build/cangjie/cjc.gni")
 
-ohos_cj_library("ohos.telephony") {
+ohos_cangjie_shared_library("ohos.telephony") {
   sources = [ "telephony.cj" ]
 
   subsystem_name = "telephony"
   part_name = "telephony_cangjie_wrapper"
-  lib_name = "telephony"
 }

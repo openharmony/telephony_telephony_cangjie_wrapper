@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-package ohos.telephony_call
+package ohos.telephony.call
 
-import ohos.ffi.*
 import ohos.hilog.*
-import std.collection.*
 import ohos.labels.*
-import ohos.base.*
+import ohos.business_exception.getUniversalErrorMsg
+
+import std.collection.*
+import std.deriving.Derive
 
 let TELEPHONY_CALL_LOG = HilogChannel(0, 0xD002B25, "CJ-Telephony_Call")
 const ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE: Int32 = -2
@@ -58,112 +59,161 @@ protected func getErrorMsg(code: Int32): String {
     }
 }
 
+/**
+ * Indicates the option for determining if a number is an emergency number for specified slot.
+ *
+ * @relation export interface EmergencyNumberOptions
+ */
 @!APILevel[
     21,
     stagemodelonly: true,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
-public enum EmergencyNumberOptions {
+public class EmergencyNumberOptions {
+    /**
+     * Indicates the card slot index number, ranging from 0 to the
+     * maximum card slot index number supported by the device.
+     *
+     * @relation slotId?: number
+     */
     @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    SLOT_ID_ONE
-    | @!APILevel[
+    public var slotId: Int32
+
+    /**
+     * EmergencyNumberOptions constructor.
+     */
+    @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    SLOT_ID_TWO
-    | ...
-
-    func getValue(): Int32 {
-        match (this) {
-            case SLOT_ID_ONE => 0
-            case SLOT_ID_TWO => 1
-            case _ => throw IllegalArgumentException("The type is not supported.")
-        }
+    public init(slotId!: Int32 = 0) {
+        this.slotId = slotId
     }
 }
 
+/**
+ * Indicates the states of call.
+ *
+ * @relation export enum CallState
+ */
+@Derive[ToString, Equatable]
 @!APILevel[
     21,
     stagemodelonly: true,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public enum CallState {
+    /**
+     * Indicates an invalid state, which is used when the call state fails to be obtained.
+     *
+     * @relation CALL_STATE_UNKNOWN = -1
+     */
     @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    CALL_STATE_UNKNOWN
-    | @!APILevel[
+    CallStateUnknown
+    |
+    /**
+     * Indicates that there is no ongoing call.
+     *
+     * @relation CALL_STATE_IDLE = 0
+     */
+    @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    CALL_STATE_IDLE
-    | @!APILevel[
+    CallStateIdle
+    |
+    /**
+     * Indicates that an incoming call is ringing or waiting.
+     *
+     * @relation CALL_STATE_RINGING = 1
+     */
+    @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    CALL_STATE_RINGING
-    | @!APILevel[
+    CallStateRinging
+    |
+    /**
+     * Indicates that a least one call is in the dialing, active, or hold state, and there is no new
+     * incoming call ringing or waiting.
+     *
+     * @relation CALL_STATE_OFFHOOK = 2
+     */
+    @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    CALL_STATE_OFFHOOK
+    CallStateOffhook
+    |
+    /**
+     * Indicates that call is answered
+     *
+     * @relation CALL_STATE_ANSWERED = 3
+     */
+    @!APILevel[
+        21,
+        stagemodelonly: true,
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
+    CallStateAnswered
     | ...
-
-    @!APILevel[
-        21,
-        stagemodelonly: true,
-        syscap: "SystemCapability.Telephony.CallManager"
-    ]
-    public func getValue(): Int32 {
-        match (this) {
-            case CALL_STATE_UNKNOWN => -1
-            case CALL_STATE_IDLE => 0
-            case CALL_STATE_RINGING => 1
-            case CALL_STATE_OFFHOOK => 2
-            case _ => throw IllegalArgumentException("The type is not supported.")
-        }
-    }
 
     protected static func parse(val: Int32): CallState {
         match (val) {
-            case -1 => CALL_STATE_UNKNOWN
-            case 0 => CALL_STATE_IDLE
-            case 1 => CALL_STATE_RINGING
-            case 2 => CALL_STATE_OFFHOOK
+            case -1 => CallStateUnknown
+            case 0 => CallStateIdle
+            case 1 => CallStateRinging
+            case 2 => CallStateOffhook
+            case 3 => CallStateAnswered
             case _ => throw IllegalArgumentException("The type is not supported.")
         }
     }
 }
 
+/**
+ * Indicates the option for number formatting.
+ *
+ * @relation export interface NumberFormatOptions
+ */
 @!APILevel[
     21,
     stagemodelonly: true,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class NumberFormatOptions {
+    /**
+     * Indicates the country code.
+     *
+     * @relation countryCode?: string
+     */
     @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    public let countryCode: String
+    public var countryCode: String
 
+    /**
+     * NumberFormatOptions constructor
+     */
     @!APILevel[
         21,
         stagemodelonly: true,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
-    public init(countryCode: String) {
+    public init(countryCode!: String = "CN") {
         this.countryCode = countryCode
     }
 }
