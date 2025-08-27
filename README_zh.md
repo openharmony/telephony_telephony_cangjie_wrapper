@@ -42,6 +42,12 @@ base/telephony/telephony_cangjie_wrapper
   - SIM卡管理。
   - 短信服务。
 
+电话服务相关API请参见[ohos.telephony.call](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md)，相关指导请参见：[拨打电话](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_zh_cn/telephony/cj-telephony-call.md)。
+
 ## 相关仓
 
 [call_manager](https://gitee.com/openharmony/telephony_call_manager)
+
+## 参与贡献
+
+欢迎广大开发者贡献代码、文档等，具体的贡献流程和方式请参见[参与贡献](https://gitcode.com/openharmony/docs/blob/master/zh-cn/contribute/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE.md)。

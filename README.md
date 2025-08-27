@@ -21,7 +21,7 @@ base/telephony/telephony_cangjie_wrapper
 
 1.  The open-source version currently provides the cellular call (CS call only), SMS & MMS, and cellular data services and supports the dual-SIM framework.
 2.  The southbound HDI depends on the chip vendor.
-3.  The currently open Ability Cangjie api only supports standard devices.
+3.  The currently open Telephony Cangjie api only supports standard devices.
 
 ## Usage Guidelines
 
@@ -38,6 +38,12 @@ The following features are not provided yet:
   - SIM Card Management
   - Short Message Service (SMS)
 
+For Telephony-related APIs, please refer to [ohos.telephony.call](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md). For relevant guidance, please refer to [Telephony Development Guide](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_en/telephony/cj-telephony-overview.md).
+
 ## Repositories Involved
 
 [call_manager](https://gitee.com/openharmony/telephony_call_manager/blob/master/README.md)
+
+## Code Contribution
+
+Developers are welcome to contribute code, documentation, etc. For specific contribution processes and methods, please refer to [Code Contribution](https://gitcode.com/openharmony/docs/blob/master/en/contribute/code-contribution.md).
