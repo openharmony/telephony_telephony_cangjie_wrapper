@@ -1,25 +1,14 @@
-# telephony_cangjie_wrapper <a name="EN-US_TOPIC_0000001162422291"></a>
+# telephony_cangjie_wrapper
 
-## Introduction<a name="section104mcpsimp"></a>
+## Introduction
 
-The telephony_cangjie_wrapper is a Cangjie API encapsulated on OpenHarmony based on the capabilities of the Telephony subsystem. The Telephony subsystem provides APIs for obtaining information about the wireless cellular network and SIM card. Applications can call these APIs to obtain information such as the name of the currently registered network, network service status, signal strength, and SIM card information.
-
-The Telephony subsystem consists of the following modules:
-
--   Telephony core service: initializes the Radio Interface Layer (RIL) Manager, SIM card module, and radio module.
--   Call Manager module: manages three types of calls – circuit switched \(CS\), IP multimedia subsystem \(IMS\), and over the top \(OTT\) calls. It is responsible for applying for the audio and video resources required for a call and resolving conflicts in a multi-channel call.
--   Cellular call module: implements basic calls over carrier networks.
--   Cellular data module: implements cellular data services over carrier networks.
--   SMS & MMS module: provides the capabilities of sending and receiving short message service \(SMS\) messages and encoding and decoding multimedia messaging service \(MMS\) messages.
--   State registry module: provides APIs to register and deregister an observer that listens for various callback events of the telephony subsystem. 
--   Data storage module: stores persistent data and provides **DataAbility** access APIs.
--   RIL Adapter module: implements adaptation of the modem communication interfaces.
+The telephony_cangjie_wrapper is a Cangjie API encapsulated on OpenHarmony based on the capabilities of the Telephony subsystem. Provides call management functions, including making calls, jumping to the dialing interface, obtaining call status, and formatting phone numbers.
 
 **Figure 1** Architecture of the telephony_cangjie_wrapper
 
 ![](figures/telephony_cangjie_wrapper_architecture_en.png)
 
-## Directory Structure<a name="section119mcpsimp"></a>
+## Directory Structure
 
 ```
 base/telephony/telephony_cangjie_wrapper
@@ -28,11 +17,33 @@ base/telephony/telephony_cangjie_wrapper
 ├── figures          # architecture pictures
 ```
 
-## Constraints<a name="section123mcpsimp"></a>
+## Constraints
 
 1.  The open-source version currently provides the cellular call (CS call only), SMS & MMS, and cellular data services and supports the dual-SIM framework.
 2.  The southbound HDI depends on the chip vendor.
+3.  The currently open Telephony Cangjie api only supports standard devices.
 
-## Repositories Involved<a name="section152mcpsimp"></a>
+## Usage Guidelines
+
+The following features are provided:
+
+  - make a phone call
+
+The following features are not provided yet:
+
+  - Cellular Data
+  - eSIM Card Management
+  - Subscription Management
+  - Network Search
+  - SIM Card Management
+  - Short Message Service (SMS)
+
+For Telephony-related APIs, please refer to [ohos.telephony.call](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md). For relevant guidance, please refer to [Telephony Development Guide](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_en/telephony/cj-telephony-overview.md).
+
+## Repositories Involved
 
 [call_manager](https://gitee.com/openharmony/telephony_call_manager/blob/master/README.md)
+
+## Code Contribution
+
+Developers are welcome to contribute code, documentation, etc. For specific contribution processes and methods, please refer to [Code Contribution](https://gitcode.com/openharmony/docs/blob/master/en/contribute/code-contribution.md).
