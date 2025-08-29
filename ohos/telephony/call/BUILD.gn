@@ -16,7 +16,7 @@ import("//build/cangjie/cjc.gni")
 ohos_cangjie_shared_library("ohos.telephony.call") {
   sources = [
     "number_format_options.cj",
-    "telephony_call.cj",
+    "call.cj",
     "telephony_call_ffi.cj",
   ]
 
