@@ -2,7 +2,8 @@
 
 ## 简介
 
-电话服务仓颉接口是在 OpenHarmony 上基于电话服务子系统能力之上封装的仓颉API，提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码。
+电话服务仓颉接口是在OpenHarmony上基于电话服务子系统能力之上封装的仓颉API，提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码。
+当前开放的电话服务仓颉接口仅支持standard设备。
 
 ## 系统架构
 
@@ -12,20 +13,27 @@
 
 ## 目录
 
-全球化仓颉源代码在/base/telephony/telephony_cangjie_wrapper目录下。
-
 ```
 base/telephony/telephony_cangjie_wrapper
-├── ohos             # 仓颉电话服务接口实现
-├── kit              # 仓颉kit化代码
-├── figures          # 存放readme中的架构图
+├── figures          # 存放README中的架构图
+├── kit              # 仓颉TelephonyKit的kit化代码
+│   └── TelephonyKit
+└── ohos             # 仓颉Telephony接口实现
+    └── telephony
 ```
+
+如架构图所示：
+
+- 跳转拨号界面接口：提供拨号功能，跳转到拨号界面，并显示待拨出的号码的能力。
+- 获取通话属性接口：提供判断是否存在通话，获取当前通话状态，检查当前设备是否具备语音通话能力以及判断是否是紧急电话号码的能力。
+- 格式化电话号码接口：提供格式化电话号码的能力。
+- 仓颉电话服务FFI接口定义：负责定义C互操作仓颉接口，用于实现电话服务的能力。
+- 通话管理服务：负责提供通话管理基础功能，封装C接口提供给仓颉进行互操作。
 
 ## 约束
 
-1.  目前开源的范围包括蜂窝通话（仅支持CS通话）、短信、数据上网，支持双SIM卡框架。
-2.  南向HDI依赖芯片厂商适配。
-3.  当前开放的电话服务仓颉接口仅支持standard设备
+1. 目前开源的范围包括蜂窝通话（仅支持CS通话）、短信、数据上网，支持双SIM卡框架。
+2. 南向HDI依赖芯片厂商适配。
 
 ## 使用说明
 
@@ -47,6 +55,12 @@ base/telephony/telephony_cangjie_wrapper
 ## 相关仓
 
 [call_manager](https://gitee.com/openharmony/telephony_call_manager)
+
+[ability_ability_cangjie_wrapper](https://gitcode.com/openharmony-sig/ability_ability_cangjie_wrapper)
+
+[arkcompiler_cangjie_ark_interop](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop)
+
+[hiviewdfx_hiviewdfx_cangjie_wrapper](https://gitcode.com/openharmony-sig/hiviewdfx_hiviewdfx_cangjie_wrapper)
 
 ## 参与贡献
 
