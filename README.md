@@ -7,7 +7,7 @@ The currently open Telephony Cangjie api only supports standard devices.
 
 **Figure 1** Architecture of the telephony_cangjie_wrapper
 
-![](figures/telephony_cangjie_wrapper_architecture_en.png)
+![Architecture of the telephony_cangjie_wrapper](figures/telephony_cangjie_wrapper_architecture_en.png)
 
 As shown in the architecture:
 
@@ -24,8 +24,9 @@ base/telephony/telephony_cangjie_wrapper
 ├── figures          # architecture pictures
 ├── kit              # Cangjie TelephonyKit kit code
 │   └── TelephonyKit
-└── ohos             # Cangjie Telephony code
-    └── telephony
+├── ohos             # Cangjie Telephony code
+│   └── telephony
+└── test             # Cangjie Telephony test cases
 ```
 
 ## Constraints
