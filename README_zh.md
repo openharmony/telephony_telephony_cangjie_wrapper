@@ -9,7 +9,7 @@
 
 **图 1**  电话服务仓颉架构图
 
-![](figures/telephony_cangjie_wrapper_architecture.png)
+![电话服务仓颉架构图](figures/telephony_cangjie_wrapper_architecture.png)
 
 ## 目录
 
@@ -18,8 +18,9 @@ base/telephony/telephony_cangjie_wrapper
 ├── figures          # 存放README中的架构图
 ├── kit              # 仓颉TelephonyKit的kit化代码
 │   └── TelephonyKit
-└── ohos             # 仓颉Telephony接口实现
-    └── telephony
+├── ohos             # 仓颉电话服务接口实现
+│   └── telephony
+└── test             # 仓颉电话服务测试用例
 ```
 
 如架构图所示：
@@ -37,7 +38,7 @@ base/telephony/telephony_cangjie_wrapper
 
 ## 使用说明
 
-如架构图所示，全球化仓颉接口提供了以下功能接口，开发者可以根据使用诉求，综合使用一类或多类接口：
+如架构图所示，电话服务仓颉接口提供了以下功能接口，开发者可以根据使用诉求，综合使用一类或多类接口：
 
   - 拨打电话。
 
