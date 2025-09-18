@@ -65,8 +65,7 @@ protected func getErrorMsg(code: Int32): String {
  * @relation export interface EmergencyNumberOptions
  */
 @!APILevel[
-    21,
-    stagemodelonly: true,
+    22,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class EmergencyNumberOptions {
@@ -77,8 +76,7 @@ public class EmergencyNumberOptions {
      * @relation slotId?: number
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public var slotId: Int32
@@ -87,8 +85,7 @@ public class EmergencyNumberOptions {
      * EmergencyNumberOptions constructor.
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public init(slotId!: Int32 = 0) {
@@ -103,8 +100,7 @@ public class EmergencyNumberOptions {
  */
 @Derive[ToString, Equatable]
 @!APILevel[
-    21,
-    stagemodelonly: true,
+    22,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public enum CallState {
@@ -114,8 +110,7 @@ public enum CallState {
      * @relation CALL_STATE_UNKNOWN = -1
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateUnknown
@@ -126,8 +121,7 @@ public enum CallState {
      * @relation CALL_STATE_IDLE = 0
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateIdle
@@ -138,8 +132,7 @@ public enum CallState {
      * @relation CALL_STATE_RINGING = 1
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateRinging
@@ -151,8 +144,7 @@ public enum CallState {
      * @relation CALL_STATE_OFFHOOK = 2
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateOffhook
@@ -163,8 +155,7 @@ public enum CallState {
      * @relation CALL_STATE_ANSWERED = 3
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateAnswered
@@ -188,8 +179,7 @@ public enum CallState {
  * @relation export interface NumberFormatOptions
  */
 @!APILevel[
-    21,
-    stagemodelonly: true,
+    22,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class NumberFormatOptions {
@@ -199,8 +189,7 @@ public class NumberFormatOptions {
      * @relation countryCode?: string
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public var countryCode: String
@@ -209,8 +198,7 @@ public class NumberFormatOptions {
      * NumberFormatOptions constructor
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public init(countryCode!: String = "CN") {
