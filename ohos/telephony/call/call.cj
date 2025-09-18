@@ -30,8 +30,7 @@ import std.collection.*
  * @relation declare namespace call
  */
 @!APILevel[
-    21,
-    stagemodelonly: true,
+    22,
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class Call {
@@ -53,8 +52,7 @@ public class Call {
      * @relation function formatPhoneNumberToE164(phoneNumber: string, countryCode: string): Promise<string>
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
@@ -89,8 +87,7 @@ public class Call {
      * @relation function makeCall(phoneNumber: string): Promise<void>
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(phoneNumber: String): Unit {
@@ -116,8 +113,7 @@ public class Call {
      * @relation function makeCall(context: Context, phoneNumber: string): Promise<void>
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(context: UIAbilityContext, phoneNumber: String): Unit {
@@ -139,8 +135,7 @@ public class Call {
      * @relation function isEmergencyPhoneNumber(phoneNumber: string, options?: EmergencyNumberOptions): Promise<boolean>
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
@@ -165,8 +160,7 @@ public class Call {
      * @relation function hasCallSync(): boolean
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func hasCall(): Bool {
@@ -179,8 +173,7 @@ public class Call {
      * @relation function getCallStateSync(): CallState
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func getCallState(): CallState {
@@ -194,8 +187,7 @@ public class Call {
      * @relation function hasVoiceCapability(): boolean
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func hasVoiceCapability(): Bool {
@@ -217,8 +209,7 @@ public class Call {
      * @relation function formatPhoneNumber(phoneNumber: string, options?: NumberFormatOptions): Promise<string>
      */
     @!APILevel[
-        21,
-        stagemodelonly: true,
+        22,
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func formatPhoneNumber(
