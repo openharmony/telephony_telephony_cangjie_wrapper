@@ -25,9 +25,10 @@
 base/telephony/telephony_cangjie_wrapper
 ├── figures          # 存放README中的架构图
 ├── kit              # 仓颉TelephonyKit的kit化代码
-│   └── TelephonyKit
+│   └── TelephonyKit # TelephonyKit模块实现
 ├── ohos             # 仓颉电话服务接口实现
-│   └── telephony
+│   └── telephony    # 电话服务模块
+│       └── call     # 呼叫管理模块
 └── test             # 仓颉电话服务测试用例
 ```
 
@@ -53,14 +54,13 @@ base/telephony/telephony_cangjie_wrapper
 
 电话服务相关API请参见[ohos.telephony.call](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md)，相关指导请参见：[拨打电话](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_zh_cn/telephony/cj-telephony-call.md)。
 
-## 相关仓
-
-[call_manager](https://gitee.com/openharmony/telephony_call_manager)
-
-[ability_ability_cangjie_wrapper](https://gitcode.com/openharmony-sig/ability_ability_cangjie_wrapper)
-
-[arkcompiler_cangjie_ark_interop](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop)
-
 ## 参与贡献
 
 欢迎广大开发者贡献代码、文档等，具体的贡献流程和方式请参见[参与贡献](https://gitcode.com/openharmony/docs/blob/master/zh-cn/contribute/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE.md)。
+
+## 相关仓
+
+[ability_ability_cangjie_wrapper](https://gitcode.com/openharmony-sig/ability_ability_cangjie_wrapper)
+[arkcompiler_cangjie_ark_interop](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop)
+[hiviewdfx_hiviewdfx_cangjie_wrapper](https://gitcode.com/openharmony-sig/hiviewdfx_hiviewdfx_cangjie_wrapper)
+[telephony_call_manager](https://gitcode.com/openharmony/telephony_call_manager)
