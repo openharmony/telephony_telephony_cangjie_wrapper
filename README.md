@@ -30,12 +30,9 @@ base/telephony/telephony_cangjie_wrapper
 │   └── telephony    # Telephony module
 │       └── call     # Call management module
 └── test             # Cangjie telephony service test cases
+    └── APILevel21
+        └── telephony_call # Call management test cases
 ```
-
-## Constraints
-
-1. The current open source scope includes cellular calls (CS calls only), SMS, data networking, and supports dual SIM card framework.
-2. Southbound HDI depends on chip vendor adaptation.
 
 ## Usage
 
@@ -43,7 +40,7 @@ As shown in the architecture diagram, the telephony Cangjie API provides the fol
 
   - Make phone calls.
 
-Compared to ArkTS, the following functions are not supported:
+Compared to ArkTS API, the following functions are not supported:
 
   - Cellular Data
   - eSIM Card Management
@@ -61,6 +58,9 @@ Developers are welcome to contribute code, documentation, etc. For specific cont
 ## Repositories Involved
 
 [ability_ability_cangjie_wrapper](https://gitcode.com/openharmony-sig/ability_ability_cangjie_wrapper)
+
 [arkcompiler_cangjie_ark_interop](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop)
+
 [hiviewdfx_hiviewdfx_cangjie_wrapper](https://gitcode.com/openharmony-sig/hiviewdfx_hiviewdfx_cangjie_wrapper)
+
 [telephony_call_manager](https://gitcode.com/openharmony/telephony_call_manager)

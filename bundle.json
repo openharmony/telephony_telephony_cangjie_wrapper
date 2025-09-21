@@ -22,8 +22,7 @@
             "SystemCapability.Telephony.CallManager",
             "SystemCapability.Applications.Contacts"
         ],
-        "features": [
-        ],
+        "features": [],
         "adapted_system_type": [
             "standard"
         ],
