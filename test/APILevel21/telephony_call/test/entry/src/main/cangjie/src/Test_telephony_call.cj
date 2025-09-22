@@ -18,9 +18,9 @@
 // */
 package ohos_app_cangjie_entry
 
-internal import kit.PerformanceAnalysisKit.*
-internal import kit.TelephonyKit.*
-internal import kit.TestKit.*
+internal import PerformanceAnalysisKit.*
+internal import TelephonyKit.*
+internal import TestKit.*
 internal import ohos.base.*
 internal import std.collection.*
 import std.unittest.testmacro.*
@@ -29,7 +29,7 @@ import std.unittest.common.*
 import std.unittest.testmacro.*
 import ohos.base.*
 import ohos.ui_test.*
-import kit.AbilityKit.*
+import AbilityKit.*
 internal import ohos.business_exception.BusinessException
 
 
