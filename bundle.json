@@ -41,7 +41,7 @@
             "sub_component": [
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony:ohos.telephony",
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony.call",
-                "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit"
+                "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:TelephonyKit"
             ],
             "inner_kits": [],
             "test": []

@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-package kit.TelephonyKit
+package TelephonyKit
 
 public import ohos.telephony.call.*
