@@ -18,6 +18,9 @@ As shown in the architecture diagram:
 - formatPhoneNumber, formatPhoneNumberToE164: Provides the capability to format phone numbers.
 - Cangjie Telephony FFI interface: Responsible for defining C interoperation Cangjie interfaces, used to implement telephony service capabilities.
 - call_manager: Responsible for providing call management basic functions, encapsulating C interfaces for interoperation with Cangjie.
+- ability_cangjie_wrapper: Responsible for providing UiAbilityContext, used for dial operation.
+- hiviewdfx_cangjie_wrapper: Provides logging interfaces for printing logs on critical paths.
+- cangjie_ark_interop: Provides Cangjie annotation definitions for API annotation and BusinessException exception class definition for user-facing exceptions.
 
 ## Directory Structure
 
@@ -30,8 +33,7 @@ base/telephony/telephony_cangjie_wrapper
 │   └── telephony    # Telephony module
 │       └── call     # Call management module
 └── test             # Cangjie telephony service test cases
-    └── APILevel22
-        └── telephony_call # Call management test cases
+    └── telephony_call # Call management test cases
 ```
 
 ## Usage

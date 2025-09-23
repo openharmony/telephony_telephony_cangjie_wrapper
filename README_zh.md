@@ -18,6 +18,9 @@
 - 格式化电话号码接口：提供格式化电话号码的能力。
 - 仓颉电话服务FFI接口定义：负责定义C语言互操作仓颉接口，用于实现电话服务的能力。
 - 通话管理服务：负责提供通话管理基础功能，封装C语言接口提供给仓颉进行互操作。
+- ability_cangjie_wrapper：负责提供应用上下文相关接口，用于拉起拨号应用。
+- hiviewdfx_cangjie_wrapper：负责提供日志接口，用于在关键路径打印日志。
+- cangjie_ark_interop：负责提供仓颉注解定义，用于对API进行标注，以及提供抛向用户的BusinessException异常类定义。
 
 ## 目录
 
@@ -30,8 +33,7 @@ base/telephony/telephony_cangjie_wrapper
 │   └── telephony    # 电话服务模块
 │       └── call     # 呼叫管理模块
 └── test             # 测试用例
-    └── APILevel22
-        └── telephony_call # 呼叫管理测试用例
+    └── telephony_call # 呼叫管理测试用例
 ```
 
 ## 使用说明
