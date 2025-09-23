@@ -30,7 +30,7 @@ base/telephony/telephony_cangjie_wrapper
 │   └── telephony    # 电话服务模块
 │       └── call     # 呼叫管理模块
 └── test             # 测试用例
-    └── APILevel21
+    └── APILevel22
         └── telephony_call # 呼叫管理测试用例
 ```
 
