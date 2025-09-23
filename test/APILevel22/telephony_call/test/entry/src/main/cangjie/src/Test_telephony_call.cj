@@ -37,28 +37,28 @@ internal import ohos.business_exception.BusinessException
 class Test_telephony_call {
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_hasCall() {
         Call.hasCall()
         @Expect(true)
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_getCallState() {
         Call.getCallState()
         @Expect(true)
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_hasVoiceCapability() {
         Call.hasVoiceCapability()
         @Expect(true)
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_isEmergencyPhoneNumber() {
         Call.isEmergencyPhoneNumber("19574113803")
         Call.isEmergencyPhoneNumber("19574113803",  options: EmergencyNumberOptions(slotId: 0))
@@ -73,7 +73,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_formatPhoneNumber() {
         Call.formatPhoneNumber("19574113803",  options: NumberFormatOptions(countryCode: "CN"))
         Call.formatPhoneNumberToE164("19574113803", "CN")
@@ -81,7 +81,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_formatPhoneNumber_error() {
         try {
             Call.formatPhoneNumberToE164("", "CN")
@@ -99,7 +99,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_makeCall_error() {
         // makeCall 在息屏时会抛异常 2097177
         try {
@@ -123,7 +123,7 @@ class Test_telephony_call {
   }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_makeCallWithContext() {
             //let call =Call()
           try{
@@ -138,7 +138,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_makeCall() {
         try {
             Call.makeCall("19574113803")
@@ -148,7 +148,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_EmergencyNumberOptions_getValue() {
         Call.isEmergencyPhoneNumber("11111111111", options: EmergencyNumberOptions(slotId: 0))
         Call.isEmergencyPhoneNumber("22222222222", options: EmergencyNumberOptions(slotId: 1))
@@ -156,7 +156,7 @@ class Test_telephony_call {
     }
 
     @TestCase
-    @Tag[APILevel21, TestLevel0]
+    @Tag[APILevel22, TestLevel0]
     func test_CallState() {
         let enumArray: Array<CallState> = [
             CallState.CallStateUnknown,
