@@ -2,30 +2,29 @@
 
 ## 简介
 
-电话服务仓颉封装是在OpenHarmony上面对开发者使用仓颉语言进行应用开发时提供的呼叫管理能力，开发者可以使用该能力实现拨打电话、获取通话状态、格式化电话号码。
+电话服务仓颉封装是在OpenHarmony上面向开发者使用仓颉语言进行应用开发时提供的呼叫管理能力，包括拨打电话、获取通话属性、格式化电话号码。
 当前开放的电话服务仓颉封装仅支持standard设备。
 
 ## 系统架构
 
-**图 1**  电话服务仓颉架构图
+**图 1**  电话服务仓颉封装架构图
 
-![电话服务仓颉架构图](figures/telephony_cangjie_wrapper_architecture.png)
+![电话服务仓颉封装架构图](figures/telephony_cangjie_wrapper_architecture.png)
 
 如架构图所示：
 
 接口层：
-- 拨号：面向开发者提供拨号能力，开发者可以使用该能力，拉起系统电话应用后自行呼出通话。
-- 获取通话属性：面向开发者提供判断是否存在通话，获取当前通话状态，检查当前设备是否具备语音通话能力以及判断是否是紧急电话号码的能力。
-- 格式化电话号码：面向开发者提供格式化电话号码的能力。
+- 呼叫管理：面向开发者提供呼叫管理能力，包括拨打电话、获取通话属性、格式化电话号码。
+  - 拨打电话：面向开发者提供拨打电话的能力，能够跳转到系统拨号界面，并显示被叫号码。
+  - 获取通话属性：面向开发者提供获取当前通话状态，检查当前设备是否具备语音通话能力，检查当前设备是否正在通话以及判断是否是紧急电话号码的能力。
+  - 格式化电话号码：面向开发者提供格式化电话号码的能力，格式化后的号码满足标准数字字串或者E.164表示形式。
 
 框架层：
-- 拨号功能封装：基于底层通话管理的系统通话管理能力，实现拨号功能，跳转到拨号界面，并显示被叫号码。
-- 获取通话属性功能封装：基于底层通话管理的系统通话管理能力，实现获取通话属性的能力。
-- 格式化电话号码功能封装：基于底层通话管理的系统通话管理能力，实现格式化电话号码的能力，格式化后的号码满足标准数字字串或者E.164表示形式。
+- 呼叫管理封装：基于底层通话管理能力实现呼叫管理封装，能够支持拨打电话，获取通话属性以及格式化电话号码。
 
 架构图中依赖部件引入说明：
 - 通话管理：依赖通话管理的系统通话管理能力，用于处理通话下行操作（如拨号、接听、挂断等）和上行状态（来电状态、呼叫等待状态等）的处理，并解决通话过程中产生的冲突。
-- ability_cangjie_wrapper：拨号依赖ability_cangjie_wrapper提供的应用上下文能力，用于拨号时跳转到拨号界面。
+- ability_cangjie_wrapper：依赖ability_cangjie_wrapper提供的应用上下文能力，用于拨打电话时跳转到拨号界面。
 - hiviewdfx_cangjie_wrapper：依赖hiviewdfx_cangjie_wrapper提供的HiLog日志能力，用于在关键路径打印日志。
 - cangjie_ark_interop：依赖cangjie_ark_interop提供的仓颉注解类定义和BusinessException异常类定义，用于对API进行标注，及在错误分支向用户抛出异常。
 
@@ -47,9 +46,9 @@ base/telephony/telephony_cangjie_wrapper
 
 当前电话服务仓颉封装提供了以下功能：
 
-  - 拨号。
+- 呼叫管理
 
-电话服务相关接口请参见[电话服务API文档](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md)，相关开发指导请参见[拨打电话](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_zh_cn/telephony/cj-telephony-call.md)。
+电话服务相关接口请参见[电话服务API文档](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md)，相关开发指导请参见[电话服务开发指南](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_zh_cn/telephony/cj-telephony-call.md)。
 
 ## 约束
 
