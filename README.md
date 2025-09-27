@@ -23,10 +23,10 @@ Framework Layer:
 
 Dependencies Introduction in Architecture:
 
-- call_manager: Depends on the system call management capabilities of the call management module, used to handle call downlink operations (such as dialing, answering, hanging up, etc.) and uplink status (incoming call status, call waiting status, etc.) processing, and resolve conflicts that occur during calls.
-- ability_cangjie_wrapper: Depends on the application context capabilities provided by ability_cangjie_wrapper, used to jump to the dial interface when making calls.
-- hiviewdfx_cangjie_wrapper: Depends on HiLog capabilities for printing logs at key points.
-- cangjie_ark_interop: Depends on APILevel class definitions and BusinessException class definitions for API annotation and throwing exceptions to users in error branches.
+- call_manager: Call wrapper depends on the system call management capabilities of the call management module, used to handle call downlink operations (such as dialing, answering, hanging up, etc.) and uplink status (incoming call status, call waiting status, etc.) processing, and resolve conflicts that occur during calls.
+- ability_cangjie_wrapper: Call wrapper depends on the application context capabilities provided by ability_cangjie_wrapper, used to jump to the dial interface when making calls.
+- hiviewdfx_cangjie_wrapper: Call wrapper depends on HiLog capabilities for printing logs at key points.
+- cangjie_ark_interop: Call wrapper depends on APILevel class definitions and BusinessException class definitions for API annotation and throwing exceptions to users in error branches.
 
 ## Directory Structure
 
@@ -34,8 +34,8 @@ Dependencies Introduction in Architecture:
 base/telephony/telephony_cangjie_wrapper
 ├── figures          # architecture pictures
 ├── kit              # Cangjie TelephonyKit kit code
-│   └── TelephonyKit # TelephonyKit module implementation
-├── ohos             # Cangjie telephony service interface implementation
+│   └── TelephonyKit # TelephonyKit module 
+├── ohos             # Cangjie telephony service 
 │   └── telephony    # Telephony module
 │       └── call     # Call management module
 └── test             # Cangjie telephony service test cases
@@ -52,7 +52,7 @@ For telephony related APIs, please refer to [ohos.telephony.call](https://gitcod
 
 ## Constraints
 
-The device to be equipped requires hardware support including a speaker or earpiece, a microphone, and also needs an inserted SIM card.
+- The device to be equipped requires hardware support including a speaker or earpiece, a microphone, and also needs an inserted SIM card.
 
 Compared to ArkTS API, the following functions are not supported:
 
