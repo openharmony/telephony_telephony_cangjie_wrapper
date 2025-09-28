@@ -23,10 +23,10 @@
 - 呼叫管理封装：基于底层通话管理能力实现呼叫管理封装，能够支持拨打电话，获取通话属性以及格式化电话号码。
 
 架构图中依赖部件引入说明：
-- 通话管理：依赖通话管理的系统通话管理能力，用于处理通话下行操作（如拨号、接听、挂断等）和上行状态（来电状态、呼叫等待状态等）的处理，并解决通话过程中产生的冲突。
-- ability_cangjie_wrapper：依赖ability_cangjie_wrapper提供的应用上下文能力，用于拨打电话时跳转到拨号界面。
-- hiviewdfx_cangjie_wrapper：依赖hiviewdfx_cangjie_wrapper提供的HiLog日志能力，用于在关键路径打印日志。
-- cangjie_ark_interop：依赖cangjie_ark_interop提供的仓颉注解类定义和BusinessException异常类定义，用于对API进行标注，及在错误分支向用户抛出异常。
+- 通话管理：呼叫管理封装依赖通话管理的系统通话管理能力，用于处理通话下行操作（如拨号、接听、挂断等）和上行状态（来电状态、呼叫等待状态等）的处理，并解决通话过程中产生的冲突。
+- ability_cangjie_wrapper：呼叫管理封装依赖ability_cangjie_wrapper提供的应用上下文能力，用于拨打电话时跳转到拨号界面。
+- hiviewdfx_cangjie_wrapper：呼叫管理封装依赖hiviewdfx_cangjie_wrapper提供的HiLog日志能力，用于在关键路径打印日志。
+- cangjie_ark_interop：呼叫管理封装依赖cangjie_ark_interop提供的仓颉注解类定义和BusinessException异常类定义，用于对API进行标注，及在错误分支向用户抛出异常。
 
 ## 目录
 
@@ -46,13 +46,13 @@ base/telephony/telephony_cangjie_wrapper
 
 当前电话服务仓颉封装提供了以下功能：
 
-- 呼叫管理
+- 呼叫管理。
 
 电话服务相关接口请参见[电话服务API文档](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/API_Reference/source_zh_cn/apis/TelephonyKit/cj-apis-telephony-call.md)，相关开发指导请参见[电话服务开发指南](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/blob/master/doc/Dev_Guide/source_zh_cn/telephony/cj-telephony-call.md)。
 
 ## 约束
 
-需要搭载的设备支持扬声器或听筒、麦克风，硬件上，以及插入SIM卡。
+- 硬件上，需要搭载的设备支持扬声器或听筒、麦克风以及插入SIM卡。
 
 与ArkTS提供的API能力相比，暂不支持以下功能：
 
