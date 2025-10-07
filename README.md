@@ -1,4 +1,4 @@
-# telephony_telephony_cangjie_wrapper
+# telephony_telephony_cangjie_wrapper(beta feature)
 
 ## Introduction
 
