@@ -28,8 +28,6 @@ import std.collection.*
 
 /**
  * Provides methods related to call management.
- *
- * @relation declare namespace call
  */
 @!APILevel[
     22,
@@ -51,7 +49,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function formatPhoneNumberToE164(phoneNumber: string, countryCode: string): Promise<string>
      */
     @!APILevel[
         22,
@@ -86,7 +83,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function makeCall(phoneNumber: string): Promise<void>
      */
     @!APILevel[
         22,
@@ -112,7 +108,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function makeCall(context: Context, phoneNumber: string): Promise<void>
      */
     @!APILevel[
         22,
@@ -134,7 +129,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function isEmergencyPhoneNumber(phoneNumber: string, options?: EmergencyNumberOptions): Promise<boolean>
      */
     @!APILevel[
         22,
@@ -158,8 +152,6 @@ public class Call {
 
     /**
      * Checks whether a call is ongoing.
-     *
-     * @relation function hasCallSync(): boolean
      */
     @!APILevel[
         22,
@@ -171,8 +163,6 @@ public class Call {
 
     /**
      * Obtains the call state.
-     *
-     * @relation function getCallStateSync(): CallState
      */
     @!APILevel[
         22,
@@ -185,8 +175,6 @@ public class Call {
 
     /**
      * Checks whether a device supports voice calls.
-     *
-     * @relation function hasVoiceCapability(): boolean
      */
     @!APILevel[
         22,
@@ -208,7 +196,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function formatPhoneNumber(phoneNumber: string, options?: NumberFormatOptions): Promise<string>
      */
     @!APILevel[
         22,
