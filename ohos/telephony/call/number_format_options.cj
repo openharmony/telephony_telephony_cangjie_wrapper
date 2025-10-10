@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
+
 package ohos.telephony.call
 
 import ohos.hilog.*
@@ -61,8 +63,6 @@ protected func getErrorMsg(code: Int32): String {
 
 /**
  * Indicates the option for determining if a number is an emergency number for specified slot.
- *
- * @relation export interface EmergencyNumberOptions
  */
 @!APILevel[
     since: "22",
@@ -72,8 +72,6 @@ public class EmergencyNumberOptions {
     /**
      * Indicates the card slot index number, ranging from 0 to the
      * maximum card slot index number supported by the device.
-     *
-     * @relation slotId?: number
      */
     @!APILevel[
         since: "22",
@@ -95,8 +93,6 @@ public class EmergencyNumberOptions {
 
 /**
  * Indicates the states of call.
- *
- * @relation export enum CallState
  */
 @Derive[ToString, Equatable]
 @!APILevel[
@@ -106,8 +102,6 @@ public class EmergencyNumberOptions {
 public enum CallState {
     /**
      * Indicates an invalid state, which is used when the call state fails to be obtained.
-     *
-     * @relation CALL_STATE_UNKNOWN = -1
      */
     @!APILevel[
         since: "22",
@@ -117,8 +111,6 @@ public enum CallState {
     |
     /**
      * Indicates that there is no ongoing call.
-     *
-     * @relation CALL_STATE_IDLE = 0
      */
     @!APILevel[
         since: "22",
@@ -128,8 +120,6 @@ public enum CallState {
     |
     /**
      * Indicates that an incoming call is ringing or waiting.
-     *
-     * @relation CALL_STATE_RINGING = 1
      */
     @!APILevel[
         since: "22",
@@ -140,8 +130,6 @@ public enum CallState {
     /**
      * Indicates that a least one call is in the dialing, active, or hold state, and there is no new
      * incoming call ringing or waiting.
-     *
-     * @relation CALL_STATE_OFFHOOK = 2
      */
     @!APILevel[
         since: "22",
@@ -151,8 +139,6 @@ public enum CallState {
     |
     /**
      * Indicates that call is answered
-     *
-     * @relation CALL_STATE_ANSWERED = 3
      */
     @!APILevel[
         since: "22",
@@ -175,8 +161,6 @@ public enum CallState {
 
 /**
  * Indicates the option for number formatting.
- *
- * @relation export interface NumberFormatOptions
  */
 @!APILevel[
     since: "22",
@@ -185,8 +169,6 @@ public enum CallState {
 public class NumberFormatOptions {
     /**
      * Indicates the country code.
-     *
-     * @relation countryCode?: string
      */
     @!APILevel[
         since: "22",

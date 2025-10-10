@@ -1,6 +1,6 @@
 {
     "name": "@ohos/telephony_cangjie_wrapper",
-    "version": "6.0",
+    "version": "6.1",
     "description": "The telephony_telephony_cangjie_wrapper provides call management capabilities for developers on OpenHarmony.",
     "publishAs": "code-segment",
     "homePage": "https://gitcode.com/openharmony-sig",
@@ -40,7 +40,7 @@
             "sub_component": [
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony:ohos.telephony",
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony.call",
-                "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:TelephonyKit"
+                "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit"
             ],
             "inner_kits": [],
             "test": []

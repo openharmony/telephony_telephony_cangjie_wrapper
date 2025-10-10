@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
-package TelephonyKit
+// The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
+
+package kit.TelephonyKit
 
 public import ohos.telephony.call.*

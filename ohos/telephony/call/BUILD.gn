@@ -11,6 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
+
 import("//build/templates/cangjie/cjc.gni")
 
 ohos_cangjie_shared_library("ohos.telephony.call") {
@@ -23,7 +25,6 @@ ohos_cangjie_shared_library("ohos.telephony.call") {
   cj_external_deps = [
     "ability_cangjie_wrapper:ohos.app.ability.ui_ability",
     "ability_cangjie_wrapper:ohos.app.ability.want",
-    "ability_cangjie_wrapper:ohos.app.ability.start_options",
     "cangjie_ark_interop:ohos.business_exception",
     "cangjie_ark_interop:ohos.ffi",
     "hiviewdfx_cangjie_wrapper:ohos.hilog",

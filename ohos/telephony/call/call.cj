@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
+
 package ohos.telephony.call
 
 import ohos.app.ability.ui_ability.*
@@ -26,8 +28,6 @@ import std.collection.*
 
 /**
  * Provides methods related to call management.
- *
- * @relation declare namespace call
  */
 @!APILevel[
     since: "22",
@@ -49,7 +49,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function formatPhoneNumberToE164(phoneNumber: string, countryCode: string): Promise<string>
      */
     @!APILevel[
         since: "22",
@@ -84,7 +83,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function makeCall(phoneNumber: string): Promise<void>
      */
     @!APILevel[
         since: "22",
@@ -110,7 +108,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function makeCall(context: Context, phoneNumber: string): Promise<void>
      */
     @!APILevel[
         since: "22",
@@ -132,7 +129,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function isEmergencyPhoneNumber(phoneNumber: string, options?: EmergencyNumberOptions): Promise<boolean>
      */
     @!APILevel[
         since: "22",
@@ -156,8 +152,6 @@ public class Call {
 
     /**
      * Checks whether a call is ongoing.
-     *
-     * @relation function hasCallSync(): boolean
      */
     @!APILevel[
         since: "22",
@@ -169,8 +163,6 @@ public class Call {
 
     /**
      * Obtains the call state.
-     *
-     * @relation function getCallStateSync(): CallState
      */
     @!APILevel[
         since: "22",
@@ -183,8 +175,6 @@ public class Call {
 
     /**
      * Checks whether a device supports voice calls.
-     *
-     * @relation function hasVoiceCapability(): boolean
      */
     @!APILevel[
         since: "22",
@@ -206,7 +196,6 @@ public class Call {
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
      * @throws { BusinessException } 8300999 - Unknown error code.
-     * @relation function formatPhoneNumber(phoneNumber: string, options?: NumberFormatOptions): Promise<string>
      */
     @!APILevel[
         since: "22",
