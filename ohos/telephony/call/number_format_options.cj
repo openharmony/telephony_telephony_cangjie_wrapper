@@ -63,6 +63,7 @@ protected func getErrorMsg(code: Int32): String {
 
 /**
  * Indicates the option for determining if a number is an emergency number for specified slot.
+ *
  */
 @!APILevel[
     22,
@@ -72,6 +73,7 @@ public class EmergencyNumberOptions {
     /**
      * Indicates the card slot index number, ranging from 0 to the
      * maximum card slot index number supported by the device.
+     *
      */
     @!APILevel[
         22,
@@ -93,6 +95,7 @@ public class EmergencyNumberOptions {
 
 /**
  * Indicates the states of call.
+ *
  */
 @Derive[ToString, Equatable]
 @!APILevel[
@@ -102,6 +105,7 @@ public class EmergencyNumberOptions {
 public enum CallState {
     /**
      * Indicates an invalid state, which is used when the call state fails to be obtained.
+     *
      */
     @!APILevel[
         22,
@@ -111,6 +115,7 @@ public enum CallState {
     |
     /**
      * Indicates that there is no ongoing call.
+     *
      */
     @!APILevel[
         22,
@@ -120,6 +125,7 @@ public enum CallState {
     |
     /**
      * Indicates that an incoming call is ringing or waiting.
+     *
      */
     @!APILevel[
         22,
@@ -130,6 +136,7 @@ public enum CallState {
     /**
      * Indicates that a least one call is in the dialing, active, or hold state, and there is no new
      * incoming call ringing or waiting.
+     *
      */
     @!APILevel[
         22,
@@ -139,6 +146,7 @@ public enum CallState {
     |
     /**
      * Indicates that call is answered
+     *
      */
     @!APILevel[
         22,
@@ -154,13 +162,14 @@ public enum CallState {
             case 1 => CallStateRinging
             case 2 => CallStateOffhook
             case 3 => CallStateAnswered
-            case _ => throw IllegalArgumentException("The type is not supported.")
+            case _ => throw BusinessException(401, "Parameter error.")
         }
     }
 }
 
 /**
  * Indicates the option for number formatting.
+ *
  */
 @!APILevel[
     22,
@@ -169,6 +178,7 @@ public enum CallState {
 public class NumberFormatOptions {
     /**
      * Indicates the country code.
+     *
      */
     @!APILevel[
         22,
