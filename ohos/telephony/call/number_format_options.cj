@@ -162,7 +162,7 @@ public enum CallState {
             case 1 => CallStateRinging
             case 2 => CallStateOffhook
             case 3 => CallStateAnswered
-            case _ => throw BusinessException(8300003, "Parameter error.")
+            case _ => throw BusinessException(8300001, "Parameter error.")
         }
     }
 }
