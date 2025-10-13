@@ -83,7 +83,6 @@ public class Call {
      * Go to the dial screen and the called number is displayed.
      *
      * @param { String } phoneNumber - Indicates the called number.
-     * @returns { Unit } The promise returned by the makeCall.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -110,7 +109,6 @@ public class Call {
      *
      * @param { UIAbilityContext } context - The context that initiates the call.
      * @param { String } phoneNumber - Indicates the called number.
-     * @returns { Unit } The promise returned by the makeCall.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -180,7 +178,7 @@ public class Call {
      * In other cases, the system returns CALL_STATE_IDLE.
      *
      * @returns { CallState } Returns the call state.
-     * @throws { BusinessException } 401 - Parameter error.
+     * @throws { BusinessException } 8300001 - Parameter error.
      */
     @!APILevel[
         22,
