@@ -28,6 +28,7 @@ import std.collection.*
 
 /**
  * Provides methods related to call management.
+ *
  */
 @!APILevel[
     22,
@@ -45,6 +46,9 @@ public class Call {
     /**
      * Formats a phone number into an E.164 representation.
      *
+     * @param { String } phoneNumber - Indicates the phone number to format.
+     * @param { String } countryCode - Indicates a two-digit country code defined in ISO 3166-1.
+     * @returns { String } Returns an E.164 number. Returns an empty string if the input phone number is invalid.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -68,8 +72,7 @@ public class Call {
                 LibC.free(formatNumber)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call formatPhoneNumberToE164 failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode),
-                        "TelephonyCall formatPhoneNumberToE164 failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
                 }
             }
             return result
@@ -79,6 +82,7 @@ public class Call {
     /**
      * Go to the dial screen and the called number is displayed.
      *
+     * @param { String } phoneNumber - Indicates the called number.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -94,8 +98,7 @@ public class Call {
                 let errCode = FfiOHOSTelephonyCallMakeCall(cNumber.value)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call makeCall failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode),
-                        "TelephonyCall makeCall failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
                 }
             }
         }
@@ -104,6 +107,8 @@ public class Call {
     /**
      * Go to the dial screen and the called number is displayed.
      *
+     * @param { UIAbilityContext } context - The context that initiates the call.
+     * @param { String } phoneNumber - Indicates the called number.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -125,6 +130,9 @@ public class Call {
     /**
      * Checks whether a phone number is on the emergency number list.
      *
+     * @param { String } phoneNumber - Indicates the phone number to check.
+     * @param { EmergencyNumberOptions } [options] - Indicates the additional information for emergency numbers.
+     * @returns { Bool } Returns true if the phone number is on the emergency number list. Returns false otherwise.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -142,8 +150,7 @@ public class Call {
                 result = FfiOHOSTelephonyCallIsEmergencyPhoneNumber(cNumber.value, options.slotId, inout errCode)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call isEmergencyPhoneNumber failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode),
-                        "TelephonyCall isEmergencyPhoneNumber failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
                 }
             }
             return result
@@ -152,6 +159,8 @@ public class Call {
 
     /**
      * Checks whether a call is ongoing.
+     *
+     * @returns { Bool } Returns true if at least one call is not in the CALL_STATE_IDLE state; returns false otherwise.
      */
     @!APILevel[
         22,
@@ -163,6 +172,13 @@ public class Call {
 
     /**
      * Obtains the call state.
+     *
+     * If an incoming call is ringing or waiting, the system returns CALL_STATE_RINGING.
+     * If at least one call is in the active, hold, or dialing state, the system returns CALL_STATE_OFFHOOK.
+     * In other cases, the system returns CALL_STATE_IDLE.
+     *
+     * @returns { CallState } Returns the call state.
+     * @throws { BusinessException } 8300001 - Parameter error.
      */
     @!APILevel[
         22,
@@ -175,6 +191,8 @@ public class Call {
 
     /**
      * Checks whether a device supports voice calls.
+     *
+     * @returns { Bool } Returns true if the device supports voice calls; returns false otherwise.
      */
     @!APILevel[
         22,
@@ -192,6 +210,9 @@ public class Call {
      * + 4-digit area code + 4-digit subscriber number. After the formatting,
      * each part is separated by a space.
      *
+     * @param { String } phoneNumber - Indicates the phone number to format.
+     * @param { NumberFormatOptions } [options] - Indicates the country code option.
+     * @returns { String } Returns the phone number after being formatted. Returns an empty string if the input phone number is invalid.
      * @throws { BusinessException } 8300001 - Invalid parameter value.
      * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
      * @throws { BusinessException } 8300003 - System internal error.
@@ -218,8 +239,7 @@ public class Call {
                 LibC.free(formatNumber)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call formatPhoneNumber failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode),
-                        "TelephonyCall formatPhoneNumber failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
                 }
             }
             return result
