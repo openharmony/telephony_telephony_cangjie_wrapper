@@ -30,7 +30,7 @@ import std.collection.HashMap
  *
  */
 @!APILevel[
-    22,
+    since: "22",
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class Call {
@@ -54,7 +54,7 @@ public class Call {
      * @throws { BusinessException } 8300999 - Unknown error code.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
@@ -88,7 +88,7 @@ public class Call {
      * @throws { BusinessException } 8300999 - Unknown error code.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(phoneNumber: String): Unit {
@@ -114,7 +114,7 @@ public class Call {
      * @throws { BusinessException } 8300999 - Unknown error code.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Applications.Contacts"
     ]
     public static func makeCall(context: UIAbilityContext, phoneNumber: String): Unit {
@@ -138,7 +138,7 @@ public class Call {
      * @throws { BusinessException } 8300999 - Unknown error code.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
@@ -162,7 +162,7 @@ public class Call {
      * @returns { Bool } Returns true if at least one call is not in the CALL_STATE_IDLE state; returns false otherwise.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func hasCall(): Bool {
@@ -180,7 +180,7 @@ public class Call {
      * @throws { BusinessException } 8300001 - Parameter error.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func getCallState(): CallState {
@@ -194,7 +194,7 @@ public class Call {
      * @returns { Bool } Returns true if the device supports voice calls; returns false otherwise.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func hasVoiceCapability(): Bool {
@@ -218,7 +218,7 @@ public class Call {
      * @throws { BusinessException } 8300999 - Unknown error code.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public static func formatPhoneNumber(

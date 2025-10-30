@@ -66,7 +66,7 @@ protected func getErrorMsg(code: Int32): String {
  *
  */
 @!APILevel[
-    22,
+    since: "22",
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class EmergencyNumberOptions {
@@ -76,7 +76,7 @@ public class EmergencyNumberOptions {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public var slotId: Int32
@@ -85,7 +85,7 @@ public class EmergencyNumberOptions {
      * EmergencyNumberOptions constructor.
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public init(slotId!: Int32 = 0) {
@@ -99,7 +99,7 @@ public class EmergencyNumberOptions {
  */
 @Derive[ToString, Equatable]
 @!APILevel[
-    22,
+    since: "22",
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public enum CallState {
@@ -108,7 +108,7 @@ public enum CallState {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateUnknown
@@ -118,7 +118,7 @@ public enum CallState {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateIdle
@@ -128,7 +128,7 @@ public enum CallState {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateRinging
@@ -139,7 +139,7 @@ public enum CallState {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateOffhook
@@ -149,7 +149,7 @@ public enum CallState {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     CallStateAnswered
@@ -172,7 +172,7 @@ public enum CallState {
  *
  */
 @!APILevel[
-    22,
+    since: "22",
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class NumberFormatOptions {
@@ -181,7 +181,7 @@ public class NumberFormatOptions {
      *
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public var countryCode: String
@@ -190,7 +190,7 @@ public class NumberFormatOptions {
      * NumberFormatOptions constructor
      */
     @!APILevel[
-        22,
+        since: "22",
         syscap: "SystemCapability.Telephony.CallManager"
     ]
     public init(countryCode!: String = "CN") {
