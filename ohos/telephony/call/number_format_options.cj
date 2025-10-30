@@ -17,11 +17,11 @@
 
 package ohos.telephony.call
 
-import ohos.hilog.*
-import ohos.labels.*
+import ohos.hilog.HilogChannel
+import ohos.labels.APILevel
 import ohos.business_exception.getUniversalErrorMsg
 import ohos.business_exception.BusinessException
-import std.collection.*
+import std.collection.HashMap
 import std.deriving.Derive
 
 let TELEPHONY_CALL_LOG = HilogChannel(0, 0xD002B25, "CJ-Telephony_Call")

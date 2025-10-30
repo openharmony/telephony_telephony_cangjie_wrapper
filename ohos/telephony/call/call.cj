@@ -17,14 +17,13 @@
 
 package ohos.telephony.call
 
-import ohos.app.ability.ui_ability.*
-import ohos.app.ability.want.*
-import ohos.encoding.json.*
-import ohos.ffi.*
-import ohos.labels.*
+import ohos.app.ability.ui_ability.UIAbilityContext
+import ohos.app.ability.want.{Want, WantValueType}
+import ohos.ffi.SUCCESS_CODE
+import ohos.labels.APILevel
 import ohos.business_exception.BusinessException
 
-import std.collection.*
+import std.collection.HashMap
 
 /**
  * Provides methods related to call management.
