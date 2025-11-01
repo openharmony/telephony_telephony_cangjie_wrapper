@@ -25,7 +25,7 @@ import std.collection.HashMap
 import std.deriving.Derive
 
 let TELEPHONY_CALL_LOG = HilogChannel(0, 0xD002B25, "CJ-Telephony_Call")
-const ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE: Int32 = -2
+
 protected let ERROR_CODE_MAP = HashMap<Int32, String>(
     [
         (8300001, "Invalid parameter value."),
@@ -43,6 +43,7 @@ protected let ERROR_CODE_MAP = HashMap<Int32, String>(
 )
 
 func getErrorCode(code: Int32): Int32 {
+    const ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE: Int32 = -2
     if (code == ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE) {
         8300003
     } else {
@@ -155,6 +156,9 @@ public enum CallState {
     CallStateAnswered
     | ...
 
+    /**
+     * @throws { BusinessException } 83000001 - Parameter error.
+     */
     protected static func parse(val: Int32): CallState {
         match (val) {
             case -1 => CallStateUnknown
