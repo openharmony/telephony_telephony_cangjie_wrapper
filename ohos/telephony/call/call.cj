@@ -41,42 +41,6 @@ public class Call {
     }
 
     /**
-     * Formats a phone number into an E.164 representation.
-     *
-     * @param { String } phoneNumber - Indicates the phone number to format.
-     * @param { String } countryCode - Indicates a two-digit country code defined in ISO 3166-1.
-     * @returns { String } Returns an E.164 number. Returns an empty string if the input phone number is invalid.
-     * @throws { BusinessException } 8300001 - Invalid parameter value.
-     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
-     * @throws { BusinessException } 8300003 - System internal error.
-     * @throws { BusinessException } 8300999 - Unknown error code.
-     */
-    @!APILevel[
-        since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
-    ]
-    public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
-        unsafe {
-            var result = ""
-            try (
-                cPhoneNumber = LibC.mallocCString(phoneNumber).asResource(),
-                cCountryCode = LibC.mallocCString(countryCode).asResource()
-            ) {
-                var errCode = 0i32
-                let formatNumber = FfiOHOSTelephonyCallFormatPhoneNumberToE164(cPhoneNumber.value, cCountryCode.value,
-                    inout errCode)
-                result = formatNumber.toString()
-                LibC.free(formatNumber)
-                if (errCode != SUCCESS_CODE) {
-                    TELEPHONY_CALL_LOG.error("Telephony_Call formatPhoneNumberToE164 failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
-                }
-            }
-            return result
-        }
-    }
-
-    /**
      * Go to the dial screen and the called number is displayed.
      *
      * @param { String } phoneNumber - Indicates the called number.
@@ -122,36 +86,6 @@ public class Call {
         context.startAbility(
             Want(bundleName: "com.ohos.contacts", abilityName: "com.ohos.contacts.MainAbility",
                 parameters: parametersMap))
-    }
-
-    /**
-     * Checks whether a phone number is on the emergency number list.
-     *
-     * @param { String } phoneNumber - Indicates the phone number to check.
-     * @param { EmergencyNumberOptions } [options] - Indicates the additional information for emergency numbers.
-     * @returns { Bool } Returns true if the phone number is on the emergency number list. Returns false otherwise.
-     * @throws { BusinessException } 8300001 - Invalid parameter value.
-     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
-     * @throws { BusinessException } 8300003 - System internal error.
-     * @throws { BusinessException } 8300999 - Unknown error code.
-     */
-    @!APILevel[
-        since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
-    ]
-    public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
-        unsafe {
-            var result = true
-            try (cNumber = LibC.mallocCString(phoneNumber).asResource()) {
-                var errCode = 0i32
-                result = FfiOHOSTelephonyCallIsEmergencyPhoneNumber(cNumber.value, options.slotId, inout errCode)
-                if (errCode != SUCCESS_CODE) {
-                    TELEPHONY_CALL_LOG.error("Telephony_Call isEmergencyPhoneNumber failed: ${getErrorMsg(errCode)}")
-                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
-                }
-            }
-            return result
-        }
     }
 
     /**
@@ -202,6 +136,36 @@ public class Call {
     }
 
     /**
+     * Checks whether a phone number is on the emergency number list.
+     *
+     * @param { String } phoneNumber - Indicates the phone number to check.
+     * @param { EmergencyNumberOptions } [options] - Indicates the additional information for emergency numbers.
+     * @returns { Bool } Returns true if the phone number is on the emergency number list. Returns false otherwise.
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     */
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
+    public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
+        unsafe {
+            var result = true
+            try (cNumber = LibC.mallocCString(phoneNumber).asResource()) {
+                var errCode = 0i32
+                result = FfiOHOSTelephonyCallIsEmergencyPhoneNumber(cNumber.value, options.slotId, inout errCode)
+                if (errCode != SUCCESS_CODE) {
+                    TELEPHONY_CALL_LOG.error("Telephony_Call isEmergencyPhoneNumber failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
+                }
+            }
+            return result
+        }
+    }
+
+    /**
      * Formats a phone number according to the Chinese Telephone Code Plan. Before the formatting,
      * a phone number is in the format of country code (if any) + 3-digit service provider code
      * + 4-digit area code + 4-digit subscriber number. After the formatting,
@@ -236,6 +200,42 @@ public class Call {
                 LibC.free(formatNumber)
                 if (errCode != SUCCESS_CODE) {
                     TELEPHONY_CALL_LOG.error("Telephony_Call formatPhoneNumber failed: ${getErrorMsg(errCode)}")
+                    throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
+                }
+            }
+            return result
+        }
+    }
+
+    /**
+     * Formats a phone number into an E.164 representation.
+     *
+     * @param { String } phoneNumber - Indicates the phone number to format.
+     * @param { String } countryCode - Indicates a two-digit country code defined in ISO 3166-1.
+     * @returns { String } Returns an E.164 number. Returns an empty string if the input phone number is invalid.
+     * @throws { BusinessException } 8300001 - Invalid parameter value.
+     * @throws { BusinessException } 8300002 - Operation failed. Cannot connect to service.
+     * @throws { BusinessException } 8300003 - System internal error.
+     * @throws { BusinessException } 8300999 - Unknown error code.
+     */
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
+    public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
+        unsafe {
+            var result = ""
+            try (
+                cPhoneNumber = LibC.mallocCString(phoneNumber).asResource(),
+                cCountryCode = LibC.mallocCString(countryCode).asResource()
+            ) {
+                var errCode = 0i32
+                let formatNumber = FfiOHOSTelephonyCallFormatPhoneNumberToE164(cPhoneNumber.value, cCountryCode.value,
+                    inout errCode)
+                result = formatNumber.toString()
+                LibC.free(formatNumber)
+                if (errCode != SUCCESS_CODE) {
+                    TELEPHONY_CALL_LOG.error("Telephony_Call formatPhoneNumberToE164 failed: ${getErrorMsg(errCode)}")
                     throw BusinessException(getErrorCode(errCode), getErrorMsg(errCode))
                 }
             }
