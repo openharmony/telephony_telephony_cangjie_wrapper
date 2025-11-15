@@ -64,7 +64,6 @@ protected func getErrorMsg(code: Int32): String {
 
 /**
  * Indicates the option for determining if a number is an emergency number for specified slot.
- *
  */
 @!APILevel[
     since: "22",
@@ -74,7 +73,6 @@ public class EmergencyNumberOptions {
     /**
      * Indicates the card slot index number, ranging from 0 to the
      * maximum card slot index number supported by the device.
-     *
      */
     @!APILevel[
         since: "22",
@@ -84,6 +82,9 @@ public class EmergencyNumberOptions {
 
     /**
      * EmergencyNumberOptions constructor.
+     *
+     * @param { Int32 } slotId - Indicates the card slot index number, ranging from 0 to the
+     * maximum card slot index number supported by the device.
      */
     @!APILevel[
         since: "22",
@@ -106,7 +107,6 @@ public class EmergencyNumberOptions {
 public enum CallState {
     /**
      * Indicates an invalid state, which is used when the call state fails to be obtained.
-     *
      */
     @!APILevel[
         since: "22",
@@ -116,7 +116,6 @@ public enum CallState {
     |
     /**
      * Indicates that there is no ongoing call.
-     *
      */
     @!APILevel[
         since: "22",
@@ -126,7 +125,6 @@ public enum CallState {
     |
     /**
      * Indicates that an incoming call is ringing or waiting.
-     *
      */
     @!APILevel[
         since: "22",
@@ -137,7 +135,6 @@ public enum CallState {
     /**
      * Indicates that a least one call is in the dialing, active, or hold state, and there is no new
      * incoming call ringing or waiting.
-     *
      */
     @!APILevel[
         since: "22",
@@ -147,7 +144,6 @@ public enum CallState {
     |
     /**
      * Indicates that call is answered
-     *
      */
     @!APILevel[
         since: "22",
@@ -173,7 +169,6 @@ public enum CallState {
 
 /**
  * Indicates the option for number formatting.
- *
  */
 @!APILevel[
     since: "22",
@@ -182,7 +177,6 @@ public enum CallState {
 public class NumberFormatOptions {
     /**
      * Indicates the country code.
-     *
      */
     @!APILevel[
         since: "22",
@@ -192,6 +186,8 @@ public class NumberFormatOptions {
 
     /**
      * NumberFormatOptions constructor
+     *
+     * @param { String } countryCode - Indicates the country code.
      */
     @!APILevel[
         since: "22",

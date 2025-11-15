@@ -27,7 +27,6 @@ import std.collection.HashMap
 
 /**
  * Provides methods related to call management.
- *
  */
 @!APILevel[
     since: "22",
@@ -51,7 +50,9 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Applications.Contacts"
+        syscap: "SystemCapability.Applications.Contacts",
+        throwexception: true,
+        workerthread: true
     ]
     public static func makeCall(phoneNumber: String): Unit {
         unsafe {
@@ -77,7 +78,8 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Applications.Contacts"
+        syscap: "SystemCapability.Applications.Contacts",
+        throwexception: true
     ]
     public static func makeCall(context: UIAbilityContext, phoneNumber: String): Unit {
         let parametersMap = HashMap<String, WantValueType>()
@@ -113,7 +115,8 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true
     ]
     public static func getCallState(): CallState {
         let enumCode = unsafe { FfiOHOSTelephonyCallGetCallState() }
@@ -122,6 +125,10 @@ public class Call {
 
     /**
      * Checks whether a device supports voice calls.
+     *
+     * The system checks whether the device has the capability to initiate a circuit switching (CS) or IP multimedia
+     * subsystem domain (IMS) call on a telephone service network. If the device supports only packet switching
+     * (even if the device supports OTT calls), {@code false} is returned.
      *
      * @returns { Bool } Returns true if the device supports voice calls; returns false otherwise.
      */
@@ -148,7 +155,9 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
     ]
     public static func isEmergencyPhoneNumber(phoneNumber: String, options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
         unsafe {
@@ -181,7 +190,9 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
     ]
     public static func formatPhoneNumber(
         phoneNumber: String,
@@ -220,7 +231,9 @@ public class Call {
      */
     @!APILevel[
         since: "22",
-        syscap: "SystemCapability.Telephony.CallManager"
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
     ]
     public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
         unsafe {
