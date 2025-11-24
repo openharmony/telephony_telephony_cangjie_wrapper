@@ -42,7 +42,14 @@
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony.call",
                 "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit"
             ],
-            "inner_kits": [],
+            "inner_kits": [
+              {
+                "name": "//base/telephony/telephony_cangjie_wrapper:copy_sdk_telephony_cangjie_libs"
+              },
+              {
+                "name": "//base/telephony/telephony_cangjie_wrapper:copy_sdk_telephony_cangjie_libs_kit"
+              }
+            ],
             "test": []
         }
     }
