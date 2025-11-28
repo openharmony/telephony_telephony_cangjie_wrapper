@@ -18,10 +18,7 @@
     "component": {
         "name": "telephony_cangjie_wrapper",
         "subsystem": "telephony",
-        "syscap": [
-            "SystemCapability.Telephony.CallManager",
-            "SystemCapability.Applications.Contacts"
-        ],
+        "syscap": [],
         "features": [],
         "adapted_system_type": [
             "standard"
