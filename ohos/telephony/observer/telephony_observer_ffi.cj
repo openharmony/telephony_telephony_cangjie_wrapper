@@ -15,8 +15,37 @@
 
 // The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
 
-package kit.TelephonyKit
+package ohos.telephony.observer
 
-public import ohos.telephony.call.*
-public import ohos.telephony.observer.*
-public import ohos.telephony.radio.*
+import ohos.telephony.call.CallState
+
+foreign {
+    func FfiTelephonyObserverOnCallStateChange(options: CObserverOptions, funcId: Int64): Int32
+
+    func FfiTelephonyObserverOffCallStateChange(funcId: Int64): Int32
+
+    func FfiTelephonyObserverOffAllCallStateChange(): Int32
+}
+
+@C
+struct CObserverOptions {
+    CObserverOptions(var slotId: Int32) {}
+}
+
+@C
+struct CCallStateInfo {
+    CCallStateInfo(
+        let state: Int32,
+        let number: CString
+    ) {}
+
+    func toCallStateInfo(): CallStateInfo {
+        CallStateInfo(CallState.parse(state), number.toString())
+    }
+
+    func free() {
+        unsafe {
+            LibC.free(number)
+        }
+    }
+}
