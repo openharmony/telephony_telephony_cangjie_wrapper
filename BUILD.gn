@@ -15,6 +15,8 @@ import("//build/templates/cangjie/cjc.gni")
 
 telephony_cangjie_wrapper_packages_ohos = [
   "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony.call",
+  "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/observer:ohos.telephony.observer",
+  "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/radio:ohos.telephony.radio",
   "//base/telephony/telephony_cangjie_wrapper/ohos/telephony:ohos.telephony",
 ]
 telephony_cangjie_wrapper_packages_kit = [ "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit" ]
