@@ -22,7 +22,7 @@ import ohos.labels.APILevel
 /**
  * Obtains the network state of the registered network.
  *
- * @param { Int32 } [slotId] - Indicates the card slot index number,
+ * @param { Int32 } [ slotId ] - Indicates the card slot index number,
  * ranging from 0 to the maximum card slot index number supported by the device.
  * if no slotId is provided, the default slotId is 0.
  * @returns { NetworkState } Returns the NetworkState object.
