@@ -16,11 +16,16 @@
 import("//build/templates/cangjie/cjc.gni")
 
 ohos_cangjie_shared_library("ohos.telephony.call") {
-  sources = [
-    "number_format_options.cj",
-    "call.cj",
-    "telephony_call_ffi.cj",
-  ]
+  
+  if (is_mingw || is_mac){
+    sources = [ "../../../mock/ohos.telephony.call.cj" ]
+  } else {
+    sources = [
+      "number_format_options.cj",
+      "call.cj",
+      "telephony_call_ffi.cj",
+    ]
+  }
 
   cj_external_deps = [
     "ability_cangjie_wrapper:ohos.app.ability.ui_ability",
