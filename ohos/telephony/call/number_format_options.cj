@@ -44,8 +44,11 @@ protected let ERROR_CODE_MAP = HashMap<Int32, String>(
 
 func getErrorCode(code: Int32): Int32 {
     const ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE: Int32 = -2
+    const ERROR_INVALID_CALLER: Int32 = 2097205
     if (code == ERROR_CELLUAR_DATA_SERVICE_UNAVAILABLE) {
         8300003
+    } else if (code == ERROR_INVALID_CALLER) {
+        8300001
     } else {
         code
     }
