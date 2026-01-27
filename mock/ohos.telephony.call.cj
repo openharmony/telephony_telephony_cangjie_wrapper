@@ -20,45 +20,85 @@ import ohos.app.ability.want.*
 import ohos.business_exception.BusinessException
 import ohos.labels.*
 
-@!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+@!APILevel[
+    since: "22",
+    syscap: "SystemCapability.Telephony.CallManager"
+]
 public class Call {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: String): String {
         return String()
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Applications.Contacts", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Applications.Contacts",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func makeCall(phoneNumber: String): Unit {
         return ()
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Applications.Contacts", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Applications.Contacts",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func makeCall(context: UIAbilityContext, phoneNumber: String): Unit {
         return ()
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func isEmergencyPhoneNumber(phoneNumber: String,
         options!: EmergencyNumberOptions = EmergencyNumberOptions(slotId: 0)): Bool {
         return true
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager", workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager",
+        workerthread: true
+    ]
     public static func hasCall(): Bool {
         return true
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func getCallState(): CallState {
         return CallState.CallStateUnknown
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public static func hasVoiceCapability(): Bool {
         return true
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager", throwexception: true, workerthread: true]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager",
+        throwexception: true,
+        workerthread: true
+    ]
     public static func formatPhoneNumber(
         phoneNumber: String,
         options!: NumberFormatOptions = NumberFormatOptions()
@@ -71,58 +111,107 @@ public class Call {
     }
 }
 
-@!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+@!APILevel[
+    since: "22",
+    syscap: "SystemCapability.Telephony.CallManager"
+]
 public class EmergencyNumberOptions {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public var slotId: Int32
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public init(slotId!: Int32 = 0) {
         super()
         this.slotId = 0
     }
 }
 
-@!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+@!APILevel[
+    since: "22",
+    syscap: "SystemCapability.Telephony.CallManager"
+]
 public enum CallState {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     CallStateUnknown
-    | @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    |
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     CallStateIdle
-    | @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    |
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     CallStateRinging
-    | @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    |
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     CallStateOffhook
-    | @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    |
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     CallStateAnswered
     | ...
 }
 
 extend CallState <: ToString {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public func toString(): String {
         return String()
     }
 }
 
 extend CallState <: Equatable<CallState> {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public operator func ==(other: CallState): Bool {
         return true
     }
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public operator func !=(other: CallState): Bool {
         return true
     }
 }
 
-@!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+@!APILevel[
+    since: "22",
+    syscap: "SystemCapability.Telephony.CallManager"
+]
 public class NumberFormatOptions {
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public var countryCode: String
 
-    @!APILevel[since: "22", syscap: "SystemCapability.Telephony.CallManager"]
+    @!APILevel[
+        since: "22",
+        syscap: "SystemCapability.Telephony.CallManager"
+    ]
     public init(countryCode!: String = "CN") {
         super()
         this.countryCode = String()
