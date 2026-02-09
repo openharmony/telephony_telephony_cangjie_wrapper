@@ -33,6 +33,7 @@ import std.collection.HashMap
     syscap: "SystemCapability.Telephony.CallManager"
 ]
 public class Call {
+    init() {}
     static init() {
         unsafe {
             FfiOHOSTelephonyCallInit()

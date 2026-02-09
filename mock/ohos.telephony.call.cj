@@ -106,7 +106,7 @@ public class Call {
         return String()
     }
     
-    public init() {
+    init() {
         super()
     }
 }
