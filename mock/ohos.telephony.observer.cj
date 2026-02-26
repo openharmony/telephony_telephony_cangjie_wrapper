@@ -13,39 +13,56 @@
  * limitations under the License.
  */
 
-// The Cangjie API is in Beta. For details on its capabilities and limitations, please refer to the README file.
-
 package ohos.telephony.observer
 
-import ohos.telephony.call.getErrorMsg
 import ohos.business_exception.BusinessException
 import ohos.ffi.SUCCESS_CODE
 import ohos.labels.APILevel
 import ohos.telephony.call.CallState
 import ohos.hilog.HilogChannel
+import std.collection.ArrayList
+import ohos.ffi.Callback1Param
+import ohos.callback_invoke.{CallbackObject, Callback1Argument}
+import std.sync.Mutex
 
-let TELEPHONY_OBSERVER_LOG = HilogChannel(0, 0xD001F07, "CJ-Telephony_Observer")
+@!APILevel[
+    since: "24",
+    syscap: "SystemCapability.Telephony.StateRegistry",
+    throwexception: true
+]
+public func onCallStateChange(callback: Callback1Argument<CallStateInfo>): Unit {
+    return ()
+}
 
-/**
- * Indicates call state and number.
- */
+@!APILevel[
+    since: "24",
+    syscap: "SystemCapability.Telephony.StateRegistry",
+    throwexception: true
+]
+public func onCallStateChange(options: ObserverOptions, callback: Callback1Argument<CallStateInfo>): Unit {
+    return ()
+}
+
+@!APILevel[
+    since: "24",
+    syscap: "SystemCapability.Telephony.StateRegistry",
+    throwexception: true
+]
+public func offCallStateChange(callback!: ?Callback1Argument<CallStateInfo> = None): Unit {
+    return ()
+}
+
 @!APILevel[
     since: "24",
     syscap: "SystemCapability.Telephony.StateRegistry"
 ]
 public class CallStateInfo {
-    /**
-     * Indicates call state.
-     */
     @!APILevel[
         since: "24",
         syscap: "SystemCapability.Telephony.StateRegistry"
     ]
     public var state: CallState
 
-    /**
-     * Indicates call number.
-     */
     @!APILevel[
         since: "24",
         syscap: "SystemCapability.Telephony.StateRegistry"
@@ -53,49 +70,29 @@ public class CallStateInfo {
     public var number: String
 
     init(state: CallState, number: String) {
+        super()
         this.state = state
         this.number = number
     }
 }
 
-/**
- * Indicates observer options.
- */
 @!APILevel[
     since: "24",
     syscap: "SystemCapability.Telephony.StateRegistry"
 ]
 public class ObserverOptions {
-    /**
-     * Indicates the ID of the target card slot.
-     */
     @!APILevel[
         since: "24",
         syscap: "SystemCapability.Telephony.StateRegistry"
     ]
     public var slotId: Int32
 
-    /**
-     * ObserverOptions constructor.
-     *
-     * @param { Int32 } slotId - Indicates the ID of the target card slot.
-     */
     @!APILevel[
         since: "24",
         syscap: "SystemCapability.Telephony.StateRegistry"
     ]
     public init(slotId: Int32) {
+        super()
         this.slotId = slotId
-    }
-
-    func toCObserverOptions(): CObserverOptions {
-        CObserverOptions(this.slotId)
-    }
-}
-
-func throwIfNotSuccess(code: Int32, className: String, funcName: String): Unit {
-    if (code != SUCCESS_CODE) {
-        TELEPHONY_OBSERVER_LOG.info("${className}: ${funcName} failed: ${code}: ${getErrorMsg(code)}")
-        throw BusinessException(code, getErrorMsg(code))
     }
 }
