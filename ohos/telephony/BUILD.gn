@@ -16,7 +16,12 @@
 import("//build/templates/cangjie/cjc.gni")
 
 ohos_cangjie_shared_library("ohos.telephony") {
-  sources = [ "telephony.cj" ]
+  
+  if (is_mingw || is_mac){
+    sources = [ "../../mock/ohos.telephony.cj" ]
+  } else {
+    sources = [ "telephony.cj" ]
+  }
 
   subsystem_name = "telephony"
   part_name = "telephony_cangjie_wrapper"
