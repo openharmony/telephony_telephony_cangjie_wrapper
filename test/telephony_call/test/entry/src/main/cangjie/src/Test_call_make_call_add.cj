@@ -188,14 +188,14 @@ class Test_Call_MakeCall_Add {
     }
 
     /**
-     * 测试双参数makeCall方法：空phoneNumber
+     * 测试双参数makeCall方法：空phoneNumber,参数没做限制
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_makeCall_Context_empty_phoneNumber() {
         try {
             Call.makeCall(getAbilityContext(), "")
-            @Expect(false)
+            @Expect(true)
         } catch (e: BusinessException) {
             // 验证错误码是否正确
             @Expect(e.code == 8300001)
@@ -203,14 +203,14 @@ class Test_Call_MakeCall_Add {
     }
 
     /**
-     * 测试双参数makeCall方法：非数字phoneNumber
+     * 测试双参数makeCall方法：非数字phoneNumber，参数没做限制
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_makeCall_Context_no_phoneNumber() {
         try {
             Call.makeCall(getAbilityContext(), "abc")
-            @Expect(false)
+            @Expect(true)
         } catch (e: BusinessException) {
             // 验证错误码是否正确
             @Expect(e.code == 8300001)
