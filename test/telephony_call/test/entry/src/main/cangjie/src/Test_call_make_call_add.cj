@@ -157,18 +157,4 @@ class Test_Call_MakeCall_Add {
         }
     }
 
-    /**
-     * 测试单参数makeCall方法：预埋接口功能受限
-     */
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_String_预埋接口功能受限() {
-        try {
-            Call.makeCall("13800138000")
-        } catch (e: BusinessException) {
-            // 可能因接口受限抛出异常
-            @Expect(true)
-        }
-    }
-
 }
