@@ -23,6 +23,6 @@ func testsuite(): Unit {
     registerTestSuite("Test_Call_Format_PhoneNumber_ToE164_Add", {=> Test_Call_Format_PhoneNumber_ToE164_Add()})
     registerTestSuite("Test_Number_FormatOptions_Add", {=> Test_Number_FormatOptions_Add()})
     registerTestSuite("Test_Call_IsEmergency_PhoneNumber_Add", {=> Test_Call_IsEmergency_PhoneNumber_Add()})
-    // registerTestSuite("Test_Call_MakeCall_Add", {=> Test_Call_MakeCall_Add()})
+    registerTestSuite("Test_Call_MakeCall_Add", {=> Test_Call_MakeCall_Add()})
     registerTestSuite("Test_Emergency_NumberOptions_Add", {=> Test_Emergency_NumberOptions_Add()})
 }
