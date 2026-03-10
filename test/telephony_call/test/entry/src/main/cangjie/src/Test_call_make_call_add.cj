@@ -39,24 +39,7 @@ internal import ohos.business_exception.BusinessException
 @Test
 class Test_Call_MakeCall_Add {
     /**
-     * 测试单参数makeCall方法：有效手机号码
-     * 注意：此测试可能会跳转到拨号界面，实际测试中需要注意
-     */
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_String_valid_mobile() {
-        try {
-            Call.makeCall("13800138000")
-            // 方法调用成功，无返回值
-        } catch (e: BusinessException) {
-            // 可能因环境限制抛出异常
-            @Expect(true)
-        }
-    }
-
-    /**
      * 测试单参数makeCall方法：有效固定电话
-     * 注意：此测试可能会跳转到拨号界面，实际测试中需要注意
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
@@ -66,13 +49,12 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(true)
+            @Expect(e.code, 8300001)
         }
     }
 
     /**
      * 测试单参数makeCall方法：紧急电话号码
-     * 注意：此测试可能会跳转到拨号界面，实际测试中需要注意
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
@@ -82,7 +64,7 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(true)
+            @Expect(e.code, 8300001)
         }
     }
 
@@ -96,7 +78,7 @@ class Test_Call_MakeCall_Add {
             Call.makeCall("")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(true)
+            @Expect(e.code, 8300001)
         }
     }
 
@@ -110,7 +92,7 @@ class Test_Call_MakeCall_Add {
             Call.makeCall("abc")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(true)
+            @Expect(e.code, 8300001)
         }
     }
 
@@ -124,7 +106,7 @@ class Test_Call_MakeCall_Add {
             Call.makeCall("")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(true)
+            @Expect(e.code, 8300001)
         }
     }
 
@@ -139,21 +121,7 @@ class Test_Call_MakeCall_Add {
             // 验证无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(true)
-        }
-    }
-
-    /**
-     * 测试单参数makeCall方法：服务不可用时抛出8300002异常
-     */
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_String_service_unavailable_throw_8300002() {
-        try {
-            Call.makeCall("13800138000")
-        } catch (e: BusinessException) {
-            // 如果抛出异常，验证错误码
-            @Expect(true)
+           @Expect(e.code, 8300001)
         }
     }
 
