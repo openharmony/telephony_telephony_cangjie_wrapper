@@ -70,21 +70,6 @@ class Test_Call_Format_PhoneNumber_ToE164_Add {
         }
     }
 
-    /**
-     * 测试非数字字符串电话号码转换为E164格式
-     */
-    /* 
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_formatPhoneNumberToE164_phoneNumber_non_numeric_string() {
-        try {
-            Call.formatPhoneNumberToE164("abc", "CN")
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(true)
-        }
-    }
-    */
 
     /**
      * 测试边界值空字符串电话号码转换为E164格式
@@ -144,21 +129,6 @@ class Test_Call_Format_PhoneNumber_ToE164_Add {
         }
     }
 
-    /**
-     * 测试无效国家码转换为E164格式
-     */
-    /* 
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_formatPhoneNumberToE164_countryCode_invalid_country_code() {
-        try {
-            Call.formatPhoneNumberToE164("13800138000", "INVALID")
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(true)
-        }
-    }
-   */
     /**
      * 测试边界值空字符串国家码转换为E164格式
      */
