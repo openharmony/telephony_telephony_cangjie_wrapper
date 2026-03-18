@@ -81,38 +81,6 @@ class Test_Call_Format_PhoneNumber_Add {
     }
 
     /**
-     * 测试非数字字符串电话号码格式化
-     */
-    /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_formatPhoneNumber_phoneNumber_non_numeric_string() {
-        try {
-            Call.formatPhoneNumber("abc")
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(true)
-        }
-    }
-    */
-
-    /**
-     * 测试过短号码格式化
-     */
-    /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_formatPhoneNumber_phoneNumber_too_short() {
-        try {
-            Call.formatPhoneNumber("123")
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(true)
-        }
-    }
-    */
-
-    /**
      * 测试边界值空字符串电话号码格式化
      */
     @TestCase
@@ -179,22 +147,6 @@ class Test_Call_Format_PhoneNumber_Add {
             @Expect(true)
         }
     }
-
-    /**
-     * 测试无效国家码options参数格式化
-     */
-    /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_formatPhoneNumber_options_invalid_country_code() {
-        try {
-            Call.formatPhoneNumber("13800138000", options: NumberFormatOptions(countryCode: "INVALID"))
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(true)
-        }
-    }
-    */
 
     /**
      * 测试边界值空国家码options参数格式化

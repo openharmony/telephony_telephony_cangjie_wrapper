@@ -206,18 +206,6 @@ class Test_Call_IsEmergency_PhoneNumber_Add {
     }
 
     /**
-     * 测试120+卡槽1组合
-     */
-    /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_isEmergencyPhoneNumber_pairwise_120_slot_1() {
-        let result = Call.isEmergencyPhoneNumber("120", options: EmergencyNumberOptions(slotId: 1))
-        @Expect(result == true)
-    }
-    */
-
-    /**
      * 测试119+卡槽0组合
      */
     @TestCase

@@ -183,23 +183,6 @@ class Test_Call_MakeCall_Add {
     }
 
     /**
-     * 测试双参数makeCall方法：边界空phoneNumber
-     */
-    /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_Context_边界空phoneNumber() {
-        try {
-            Call.makeCall(getAbilityContext(), "")
-            @Expect(false)
-        } catch (e: BusinessException) {
-            // 验证错误码是否正确
-            @Expect(e.code == 8300001)
-        }
-    }
-    */
-
-    /**
      * 测试双参数makeCall方法：无返回值
      */
     @TestCase
@@ -214,40 +197,5 @@ class Test_Call_MakeCall_Add {
         }
     }
 
-    /**
-     * 测试双参数makeCall方法：服务不可用时抛出8300002异常
-     * 注意：此测试需要有效的UIAbilityContext，实际测试中可能需要特殊环境
-     */
-     /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_Context_service_unavailable_throw_8300002() {
-        try {
-            Call.makeCall(getAbilityContext(), "13800138000")
-            // 方法可能调用成功，也可能因服务不可用抛出异常
-        } catch (e: BusinessException) {
-            // 验证错误码
-            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 8300001 || e.code == 201 || e.code == 2097177)
-        }
-    }
-    */
-
-    /**
-     * 测试双参数makeCall方法：依赖电话服务
-     * 注意：此测试需要有效的UIAbilityContext，实际测试中可能需要特殊环境
-     */
-     /*
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_makeCall_Context_depend_on_phone_service() {
-        try {
-            Call.makeCall(getAbilityContext(), "13800138000")
-            // 方法调用成功，依赖电话服务
-        } catch (e: BusinessException) {
-            // 可能因电话服务不可用抛出异常
-            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
-        }
-    }
-    */
 
 }
