@@ -133,7 +133,7 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            if (DeviceInfo.deviceType == "TV") {	 
+            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
@@ -152,7 +152,7 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
              // 可能因环境限制抛出异常
-            if (DeviceInfo.deviceType == "TV") {	 
+            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
@@ -171,7 +171,7 @@ class Test_Call_MakeCall_Add {
             @Expect(true)
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            if (DeviceInfo.deviceType == "TV") {	 
+            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 8300001)
@@ -190,7 +190,7 @@ class Test_Call_MakeCall_Add {
             @Expect(true)
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            if (DeviceInfo.deviceType == "TV") {	 
+            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 8300001)
@@ -209,7 +209,7 @@ class Test_Call_MakeCall_Add {
             // 验证无返回值，方法调用成功
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-           if (DeviceInfo.deviceType == "TV") {	 
+           if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)

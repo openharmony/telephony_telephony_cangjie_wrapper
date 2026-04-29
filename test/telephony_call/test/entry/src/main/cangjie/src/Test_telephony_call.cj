@@ -118,7 +118,7 @@ class Test_telephony_call {
         } catch (e: BusinessException) {
             Hilog.info(11111,"test","CangjieTest  ${e.message}")
             // 可能因环境限制抛出异常
-           if (DeviceInfo.deviceType == "TV") {	 
+           if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(true)	 
   	        } else {	 
   	            @Expect(e.code == 201 || e.code == 2097177)
