@@ -16,7 +16,7 @@
 package ohos_app_cangjie_entry
 
 internal import kit.PerformanceAnalysisKit.*
-import kit.BasicServiceKit.*
+import kit.BasicServicesKit.*
 internal import kit.TelephonyKit.*
 internal import kit.TestKit.*
 internal import ohos.base.*
