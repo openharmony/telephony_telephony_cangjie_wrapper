@@ -117,7 +117,12 @@ class Test_telephony_call {
              Call.makeCall(getAbilityContext(), "19574113803")
         } catch (e: BusinessException) {
             Hilog.info(11111,"test","CangjieTest  ${e.message}")
-            @Expect(e.code == 201 || e.code == 2097177)
+            // 可能因环境限制抛出异常
+           if (DeviceInfo.deviceType == "tv") {	 
+  	            @Expect(e.code, 16000001)	 
+  	        } else {	 
+  	            @Expect(e.code == 201 || e.code == 2097177)
+  	        }
 
         }
   }
