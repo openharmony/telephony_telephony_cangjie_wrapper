@@ -88,7 +88,7 @@ class Test_Call_MakeCall_Add {
     func test_makeCall_String_non_numeric_string() {
         try {
             Call.makeCall("abc")
-            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code == 8300001 || e.code == 201)
         }
@@ -161,7 +161,7 @@ class Test_Call_MakeCall_Add {
             if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)	 
   	        } else {	 
-                @Expect(e.code == 8300001 || e.cod == 201)
+                @Expect(e.code == 8300001 || e.code == 201)
   	        }
         }
     }
