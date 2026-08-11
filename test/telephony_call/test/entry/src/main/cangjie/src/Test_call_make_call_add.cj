@@ -47,7 +47,7 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(e.code == 8300001 || e.code == 2097177)
+            @Expect(e.code == 8300001 || e.code == 201)
         }
     }
 
@@ -62,7 +62,7 @@ class Test_Call_MakeCall_Add {
             // 方法调用成功，无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(e.code == 8300001 || e.code == 2097177)
+            @Expect(e.code == 8300001 || e.code == 201)
         }
     }
 
@@ -76,7 +76,7 @@ class Test_Call_MakeCall_Add {
             Call.makeCall("")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code == 8300001 || e.code == 2097177)
+            @Expect(e.code == 8300001 || e.code == 201)
         }
     }
 
@@ -90,7 +90,7 @@ class Test_Call_MakeCall_Add {
             Call.makeCall("abc")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code == 8300001 || e.code == 2097177)
+            @Expect(e.code == 8300001 || e.code == 201)
         }
     }
 
@@ -105,7 +105,7 @@ class Test_Call_MakeCall_Add {
             // 验证无返回值
         } catch (e: BusinessException) {
             // 可能因环境限制抛出异常
-            @Expect(e.code == 8300001 || e.code == 2097177)
+            @Expect(e.code == 8300001 || e.code == 201)
         }
     }
 
@@ -123,7 +123,7 @@ class Test_Call_MakeCall_Add {
             if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)	 
   	        } else {	 
-  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
+  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201)
   	        }
         }
     }
@@ -142,7 +142,7 @@ class Test_Call_MakeCall_Add {
             if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001) 
   	        } else {	 
-  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
+  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201)
   	        }
         }
     }
@@ -161,7 +161,7 @@ class Test_Call_MakeCall_Add {
             if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)	 
   	        } else {	 
-                @Expect(e.code == 8300001 || e.code == 2097177)
+                @Expect(e.code == 8300001 || e.code == 201)
   	        }
         }
     }
@@ -180,7 +180,7 @@ class Test_Call_MakeCall_Add {
             if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)	 
   	        } else {	 
-                @Expect(e.code == 8300001 || e.code == 2097177)
+                @Expect(e.code == 8300001 || e.code == 201)
   	        }
         }
     }
@@ -199,7 +199,7 @@ class Test_Call_MakeCall_Add {
            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)
   	        } else {	 
-  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201 || e.code == 2097177)
+  	            @Expect(e.code == 8300002 || e.code == 8300003 || e.code == 201)
   	        }
         }
     }

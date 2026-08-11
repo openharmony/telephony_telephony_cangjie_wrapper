@@ -101,7 +101,6 @@ class Test_telephony_call {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_makeCall_error() {
-        // makeCall 在息屏时会抛异常 2097177
         try {
              Hilog.info(1111,"test"," CangjieTest  getAbilityDelegator")
             let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
@@ -121,7 +120,7 @@ class Test_telephony_call {
            if (DeviceInfo.deviceType == "tv") {	 
   	            @Expect(e.code, 16000001)	 
   	        } else {	 
-  	            @Expect(e.code == 201 || e.code == 2097177)
+  	            @Expect(e.code == 201)
   	        }
 
         }
